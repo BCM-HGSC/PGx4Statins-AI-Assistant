@@ -1,0 +1,17 @@
+openai:
+  api_key: xxxx
+  model_name: text-embedding-ada-002
+
+chromadb:
+  persist_directory: chroma-db/persist
+  chroma_db_impl: duckdb+parquet
+  collection_name: slco1b1_collection
+
+data:
+  directory:
+    - data/slco1b1/csvs
+    - data/slco1b1/pdfs
+
+parse_pdf:
+  chunk_size: 500
+  chunk_overlap: 100
