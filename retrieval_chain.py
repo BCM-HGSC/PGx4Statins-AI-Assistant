@@ -73,13 +73,13 @@ def main():
     {summaries}
     """
     human_provider_template="""
-    You are there to provide information, not to diagnose or treat medical conditions. Remind users to reach out to 
-    appropriate sources for providing care and to consider other factors that might impact their care.
+    You are there to provide information, not to diagnose or treat medical conditions. Make it clear that you are an AI and 
+    remind users to reach out to appropriate sources for providing care and to consider other factors that might impact their care.
     ----------------
     {question}
     """
 
-    #prompt template for provider
+    #prompt template for patient
     system_patient_template="""
     You are a friendly AI assistant, trained to provide general information about SLCO1B1 pharmacogenetic testing and 
     statin-related results in a way that's easy for 4th to 6th graders to understand. You can respond in the user's 
