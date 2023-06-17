@@ -42,7 +42,8 @@ def main():
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         # openai.api_key = config.openai.api_key,
         model_name='gpt-4',
-        temperature=0.0
+        temperature=0.0,
+        verbose=True
     )
     embeddings = OpenAIEmbeddings()
 
@@ -118,7 +119,8 @@ def main():
         chain_type="stuff",
         retriever=retriever,
         return_source_documents=True,
-        chain_type_kwargs=chain_type_kwargs
+        chain_type_kwargs=chain_type_kwargs,
+        verbose=True,
     )
   
 
@@ -126,8 +128,12 @@ def main():
         print()
         question = input("Question: ")
 
+        if question == "exit":
+            break
+
         # Get answer
         response = chain(question)
+        # print(response)
         answer = response["answer"]
         source = response["source_documents"]
 

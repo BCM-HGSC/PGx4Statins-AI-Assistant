@@ -5,6 +5,8 @@ from langchain.vectorstores.chroma import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
+
 from langchain.schema import HumanMessage, AIMessage
 from dotenv import load_dotenv
 import os
@@ -68,12 +70,16 @@ def main():
     ]
     prompt = ChatPromptTemplate.from_messages(messages)
 
+    # memory=ConversationBufferMemory(
+    #         memory_key="chat_history", return_messages=True, output_key='answer')
+
     chain = ConversationalRetrievalChain.from_llm(
         model,
-        retriever=vector_store.as_retriever(),
+        retriever=vector_store.as_retriever(search_type="mmr", search_kwargs={"k":5}),
+        # memory=memory,
         return_source_documents=True,
-        condense_question_prompt=prompt
-        # verbose=True,
+        condense_question_prompt=prompt,
+        verbose=True,
     )
 
     chat_history = []
@@ -82,8 +88,15 @@ def main():
         print()
         question = input("Question: ")
 
+        if question == "exit":
+            # print(type(chain.memory.buffer))
+            # print(chain.memory.buffer)
+            break
+
         # Get answer
-        response = chain({"question": question, "chat_history": chat_history, "summaries": ""})
+        response = chain({"question": question, "chat_history": chat_history})
+        # response = chain({"question": question})
+
         answer = response["answer"]
         source = response["source_documents"]
         chat_history.append(HumanMessage(content=question))
