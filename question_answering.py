@@ -40,12 +40,15 @@ def main():
     yamlfile = args.yamlfile
     config = OmegaConf.load(yamlfile)
 
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if openai_api_key is None:
+        openai_api_key = config.openai.api_key
+
     # Load environment variables
     load_dotenv()
 
     model = ChatOpenAI(
-        openai_api_key=os.getenv("OPENAI_API_KEY"),
-        # openai.api_key = config.openai.api_key,
+        openai_api_key=openai_api_key,
         model_name='gpt-4',
         temperature=0.0,
         verbose=True

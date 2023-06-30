@@ -74,10 +74,13 @@ def main():
     # Start from scratch
     chroma_client.reset()
 
-    openai.api_key = os.getenv("OPENAI_API_KEY")
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if openai_api_key is None:
+        openai_api_key = config.openai.api_key
+
     # openai.api_key = config.openai.api_key
     openai_ef = embedding_functions.OpenAIEmbeddingFunction(
-                    api_key=openai.api_key,
+                    api_key=openai_api_key,
                     model_name=config.openai.model_name,
                 )
 
