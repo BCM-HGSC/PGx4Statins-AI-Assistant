@@ -1,10 +1,13 @@
 # -*- coding:utf-8 -*-
+# Created by liwenw at 6/30/23
+
+# -*- coding:utf-8 -*-
 # Created by liwenw at 6/12/23
 
 from langchain.vectorstores.chroma import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.chains import ConversationalRetrievalChain,RetrievalQAWithSourcesChain
+from langchain.chains import ConversationalRetrievalChain, RetrievalQAWithSourcesChain
 from langchain.schema import HumanMessage, AIMessage
 from dotenv import load_dotenv
 import os
@@ -18,11 +21,13 @@ from langchain.prompts.chat import (
 from omegaconf import OmegaConf
 import argparse
 
+
 def create_parser():
     parser = argparse.ArgumentParser(description='demo how to use ai embeddings to chat.')
     parser.add_argument("-y", "--yaml", dest="yamlfile",
                         help="Yaml file for project", metavar="YAML")
     return parser
+
 
 def main():
     parser = create_parser()
@@ -59,10 +64,9 @@ def main():
                           ),
                           )
 
-    retriever = vector_store.as_retriever(search_type="mmr", search_kwargs={"k":5})
+    retriever = vector_store.as_retriever(search_type="mmr", search_kwargs={"k": 5})
 
-    
-    #prompt template for provider
+    # prompt template for provider
     system_provider_template = """
     You are an AI assistant, trained to provide understandable and accurate information about SLCO1B1 pharmacogenetic testing and statin-related results.
     You will base your responses on the context and information provided. 
@@ -73,15 +77,15 @@ def main():
     ----------------
     {summaries}
     """
-    human_provider_template="""
+    human_provider_template = """
     You are there to provide information, not to diagnose or treat medical conditions. Make it clear that you are an AI and 
     remind users to reach out to appropriate sources for providing care and to consider other factors that might impact their care.
     ----------------
     {question}
     """
 
-    #prompt template for patient
-    system_patient_template="""
+    # prompt template for patient
+    system_patient_template = """
     You are a friendly AI assistant, trained to provide general information about SLCO1B1 pharmacogenetic testing and 
     statin-related results in a way that's easy for 4th to 6th graders to understand. You can respond in the user's 
     language, if it can be detected or if the user requests it. You are not a healthcare provider, pharmacist, or PharmD. 
@@ -90,7 +94,7 @@ def main():
     ----------------
     {summaries}
     """
-    human_patient_template="""
+    human_patient_template = """
     You are a friendly assistant, designed to deliver general information about pharmacogenetics in a way that's easily 
     comprehensible for 4th to 6th graders. Remember, while you can share knowledge and provide support, you are not a replacement 
     for professional medical advice. It's crucial that users understand that your shared information should not be used as a 
@@ -106,11 +110,10 @@ def main():
     messages = [
         SystemMessagePromptTemplate.from_template(system_provider_template),
         HumanMessagePromptTemplate.from_template(human_provider_template)
-        #SystemMessagePromptTemplate.from_template(system_patient_template),
-        #HumanMessagePromptTemplate.from_template(human_patient_template)
+        # SystemMessagePromptTemplate.from_template(system_patient_template),
+        # HumanMessagePromptTemplate.from_template(human_patient_template)
     ]
     prompt = ChatPromptTemplate.from_messages(messages)
-
 
     chain_type_kwargs = {"prompt": prompt}
 
@@ -122,7 +125,6 @@ def main():
         chain_type_kwargs=chain_type_kwargs,
         verbose=True,
     )
-  
 
     while True:
         print()
@@ -133,16 +135,15 @@ def main():
 
         # Get answer
         response = chain(question)
-        # print(response)
         answer = response["answer"]
         source = response["source_documents"]
-
 
         # Display answer
         print("\nSources:")
         for document in source:
             print(document)
         print(f"\nAnswer: {answer}")
+
 
 if __name__ == "__main__":
     main()
