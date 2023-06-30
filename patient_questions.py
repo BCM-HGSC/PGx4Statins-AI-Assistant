@@ -12,4 +12,4 @@ patient_questions = [
     "My doctor said my SLCO1B1 test indicates poor function. Does this mean I shouldn't take statins?",
     "Can my genetic test results affect how well my statin medication works?",
     "What does it mean if I have a certain phenotype in SLCO1B1? Does this affect my cholesterol medication?"
-    ]
+]
