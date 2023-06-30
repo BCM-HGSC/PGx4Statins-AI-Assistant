@@ -79,6 +79,6 @@ conda deactivate
 
 Note: The first time you run the application, it will take some time to load the data into the vector database. 
 
-Note:  You should use the same config.yaml file for the upsert.py and question_answering.py.
+Note:  You should use the same config.yaml file for the upsert and questions/answering.
 
 Enjoy it!
