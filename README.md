@@ -21,8 +21,8 @@ Since some python packages need python version >=3.7 and <=3.10, we recommend cr
 
 ```
 1. cd </path/to/project/>PGx-slco1b1-chatbot
-2. python3.9 -m venv <virtual-environment-name>
-3. source <virtual-environment-name>/bin/activate
+2. conda create -n "<virtual-environment-name>" python=3.9.2 ipython
+3. conda activate <virtual-environment-name>
 4. pip install --upgrade pip
 5. pip install -r requirements.txt
 ```
@@ -62,7 +62,7 @@ chromadb:
 You can run the following command to insert the data into the vector database:
 ```
 1. cd </path/to/project>/PGx-slco1b1-chatbot
-2. source <virtual-environment-name>/bin/activate
+2. conda activate <virtual-environment-name>
 3. python upsert.py -y config.yaml
 ```
 
@@ -70,10 +70,13 @@ You can run the following command to insert the data into the vector database:
 You can run the following command to start the question and answering application:
 ```
 1. cd </path/to/project>/PGx-slco1b1-chatbot
-2. source <virtual-environment-name>/bin/activate
+2. conda activate <virtual-environment-name>
 3. python questions_answering.py -y config.yaml
 ```
 Typing 'exit' to exit the Question/Answering loop.
+```commandline
+conda deactivate  
+```
 
 Note: The first time you run the application, it will take some time to load the data into the vector database. 
 
