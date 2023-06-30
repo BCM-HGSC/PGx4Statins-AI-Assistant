@@ -73,6 +73,8 @@ You can run the following command to start the question and answering applicatio
 2. source <virtual-environment-name>/bin/activate
 3. python question_answering.py -y config.yaml
 ```
+Typing 'exit' to exit the Question/Answering loop.
+
 Note: The first time you run the application, it will take some time to load the data into the vector database. 
 
 Note:  You should use the same config.yaml file for the upsert.py and question_answering.py.
