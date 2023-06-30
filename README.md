@@ -66,9 +66,11 @@ You can run the following command to insert the data into the vector database:
 ```
 
 ##### Question and Answering
+You can run the following command to start the question and answering application:
 ```
 1. cd </path/to/project>/PGx-slco1b1-chatbot
 2. python question_answering.py -y config.yaml
 ```
+Note: The first time you run the application, it will take some time to load the data into the vector database. And you should use the same config.yaml file for the upsert.py and question_answering.py.
 
 Enjoy it!
