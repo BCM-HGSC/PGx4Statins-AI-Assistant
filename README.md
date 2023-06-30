@@ -17,7 +17,7 @@ git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
 ```
 #### Setup python environment
 
-Since packages need python version >=3.7 and <3.10, we recommend creating python virtual environment with python 3.9. 
+Since some python packages need python version >=3.7 and <=3.10, we recommend creating python virtual environment with python 3.9. 
 
 ```
 1. cd </path/to/project/>PGx-slco1b1-chatbot
