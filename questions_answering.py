@@ -46,7 +46,7 @@ def main():
 
     model = ChatOpenAI(
         openai_api_key=openai_api_key,
-        model_name='gpt-4',
+        model_name='gpt-4', # max_tokens=8192,
         temperature=0.0,
         verbose=True
     )
