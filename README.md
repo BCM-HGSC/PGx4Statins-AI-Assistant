@@ -71,7 +71,7 @@ You can run the following command to start the question and answering applicatio
 ```
 1. cd </path/to/project>/PGx-slco1b1-chatbot
 2. source <virtual-environment-name>/bin/activate
-3. python question_answering.py -y config.yaml
+3. python questions_answering.py -y config.yaml
 ```
 Typing 'exit' to exit the Question/Answering loop.
 
