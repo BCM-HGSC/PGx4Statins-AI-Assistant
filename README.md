@@ -58,7 +58,7 @@ chromadb:
   chroma_db_impl: duckdb+parquet
   collection_name: slco1b1_collection
 ```
-You can run the following command to insert the data into the vector database:
+You can run the following command to insert the data into the vector database(You only need to run it once for the same config.yaml file)
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot
@@ -66,7 +66,7 @@ You can run the following command to insert the data into the vector database:
 ```
 
 ##### Question and Answering
-You can run the following command to start the question and answering application:
+Once you complete data isertion, you can run the following command to start the question and answering application:
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot
