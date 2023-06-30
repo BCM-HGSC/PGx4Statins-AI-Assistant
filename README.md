@@ -10,6 +10,7 @@ The overall goal of this project is to gain a comprehensive understanding of how
 
 ### Getting Started with PGx-slco1b1-chatbot
 #### Check out the project
+You might create a new folder for the project and check out the project in the folder:
 ```commandline
 cd </path/to/project>
 git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
@@ -27,18 +28,38 @@ Since packages need python version >=3.7 and <3.10, we recommend creating python
 ```
 
 #### Run the project
-Before running the application, something needs to be configured in the config.yaml file. You can specify the local vector chroma database settins and the path to the data file in the config.yaml file. We provide data files in data folder, which includes some csv and pdf files for demo. For the pdf file, the chunk size and overlap size and configurable in the config.yaml file. Since we can openai api to do question answering, you can replace the following line in the config.yaml file:
+Before running the application, somethings need to be configured in the config.yaml file. You can specify the local vector chroma database settings and the path to the data files in the config.yaml file. We provide some data files in data folder, which includes some csv and pdf files for demo. For the pdf file, the chunk size and overlap size are configurable in the config.yaml file. You can replace the following line in the config.yaml file:
+```commandline
+data:
+  directory:
+    - data/slco1b1/csvs
+    - data/slco1b1/pdfs
+
+parse_pdf:
+  chunk_size: 500
+  chunk_overlap: 100
+
+```
+Since we use openai api to do embedding and querying, your account's secret key which is available on the [website](https://platform.openai.com/account/api-keys) is needed. You can replace the following line in the config.yaml file:
 ```
 openai:
   api_key: sk-xxxx
 ```
 
-with your account's secret key which is available on the [website](https://platform.openai.com/account/api-keys). But we recommand you set it as the OPENAI_API_KEY environment variable before running the application:
+But we recommand you set it as the OPENAI_API_KEY environment variable before running the application:
 ```
 export OPENAI_API_KEY='sk-xxxx'
 ```
 
-##### Insert the data into the vector database chroma
+##### Insert the data into the vector database
+We choose Chroma as the vector database. You can find more information about Chroma [here](https://docs.trychroma.com/). We provide a script to insert the data into the vector database, For making things simple, we configure Chroma to save and load from local machine. Data will be persisted on exit and loaded on start (if it exists). You can replace the following line in the config.yaml file:
+```commandline
+chromadb:
+  persist_directory: chroma-db/persist
+  chroma_db_impl: duckdb+parquet
+  collection_name: slco1b1_collection
+```
+You can run the following command to insert the data into the vector database:
 ```
 1. cd </path/to/project>/PGx-slco1b1-chatbot
 2. python upsert.py -y config.yaml
