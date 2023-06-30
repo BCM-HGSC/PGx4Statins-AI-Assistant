@@ -17,14 +17,13 @@ git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
 ```
 #### Setup python environment
 
-Since some python packages need python version >=3.7 and <=3.10, we recommend creating python virtual environment with python 3.9. 
+Since some python packages need python version >=3.7 and <=3.10, we recommend creating python virtual environment with python 3.9. We use miniconda to manage python virtual environment. You can download miniconda from [here](https://docs.conda.io/en/latest/miniconda.html). After installing miniconda, you can create a virtual environment and install the required packages by running the following commands:
 
 ```
-1. cd </path/to/project/>PGx-slco1b1-chatbot
-2. conda create -n "<virtual-environment-name>" python=3.9.2 ipython
-3. conda activate <virtual-environment-name>
-4. pip install --upgrade pip
-5. pip install -r requirements.txt
+1. conda create -n "<virtual-environment-name>" python=3.9.2 ipython
+2. conda activate <virtual-environment-name>
+3. pip install --upgrade pip
+4. pip install -r requirements.txt
 ```
 
 #### Run the project
@@ -61,19 +60,19 @@ chromadb:
 ```
 You can run the following command to insert the data into the vector database:
 ```
-1. cd </path/to/project>/PGx-slco1b1-chatbot
-2. conda activate <virtual-environment-name>
+1. conda activate <virtual-environment-name>
+2. cd </path/to/project>/PGx-slco1b1-chatbot
 3. python upsert.py -y config.yaml
 ```
 
 ##### Question and Answering
 You can run the following command to start the question and answering application:
 ```
-1. cd </path/to/project>/PGx-slco1b1-chatbot
-2. conda activate <virtual-environment-name>
+1. conda activate <virtual-environment-name>
+2. cd </path/to/project>/PGx-slco1b1-chatbot
 3. python questions_answering.py -y config.yaml
 ```
-Typing 'exit' to exit the Question/Answering loop.
+Typing 'exit' to exit the Question/Answering loop. And you can deactivate the virtual environment by running the following command:
 ```commandline
 conda deactivate  
 ```
