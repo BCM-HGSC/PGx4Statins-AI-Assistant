@@ -26,5 +26,4 @@ provider_questions = [
     "How might a *14/*15 diplotype in SLCO1B1 impact my atorvastatin dosage?",
     "My patient has decreased function in SLCO1B1, should I adjust her Livalo dosage? Or should I prescribe another statin?",
     "My patient has decreased function in SLCO1B1, should I adjust her pitavastatin dosage?"
-
 ]
