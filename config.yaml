@@ -13,5 +13,5 @@ data:
     - data/slco1b1/pdfs
 
 parse_pdf:
-  chunk_size: 500
-  chunk_overlap: 100
+  chunk_size: 1000
+  chunk_overlap: 50
