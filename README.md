@@ -66,7 +66,7 @@ You can run the following command to insert the data into the vector database(Yo
 ```
 
 ##### Question and Answering
-Once you complete data isertion, you can run the following command to start the question and answering application:
+Once you complete data insertion, you can run the following command to start the question and answering application:
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot
