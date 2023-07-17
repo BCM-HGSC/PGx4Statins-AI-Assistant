@@ -31,12 +31,12 @@ Before running the application, somethings need to be configured in the config.y
 ```commandline
 data:
   directory:
-    - data/slco1b1/csvs
-    - data/slco1b1/pdfs
+    - /path/to/data/slco1b1/csvs
+    - /path/to/data/slco1b1/pdfs
 
 parse_pdf:
-  chunk_size: 500
-  chunk_overlap: 100
+  chunk_size: 1000
+  chunk_overlap: 50
 
 ```
 Since we use openai api to do embedding and querying, your account's secret key which is available on the [website](https://platform.openai.com/account/api-keys) is needed. You can replace the following line in the config.yaml file:
@@ -54,15 +54,15 @@ export OPENAI_API_KEY='sk-xxxx'
 We choose Chroma as the vector database. You can find more information about Chroma [here](https://docs.trychroma.com/). We provide a script to insert the data into the vector database, For making things simple, we configure Chroma to save and load from local machine. Data will be persisted on exit and loaded on start (if it exists). You can replace the following line in the config.yaml file:
 ```commandline
 chromadb:
-  persist_directory: chroma-db/persist
+  persist_directory: /path/to/chroma-db/persist
   chroma_db_impl: duckdb+parquet
   collection_name: slco1b1_collection
 ```
 You can run the following command to insert the data into the vector database(You only need to run it once for the same config.yaml file)
 ```
 1. conda activate <virtual-environment-name>
-2. cd </path/to/project>/PGx-slco1b1-chatbot
-3. python upsert.py -y config.yaml
+2. cd </path/to/project>/PGx-slco1b1-chatbot/upsert
+3. python upsert.py -y ../config.yaml
 ```
 
 ##### Question and Answering
@@ -70,7 +70,8 @@ Once you complete data insertion, you can run the following command to start the
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot
-3. python questions_answering.py -y config.yaml
+3. python questions_answering.py -y config.yaml -r patient
+or. python questions_answering.py -y config.yaml -r provider
 ```
 Typing 'exit' to exit the Question/Answering loop. And you can deactivate the virtual environment by running the following command:
 ```commandline
