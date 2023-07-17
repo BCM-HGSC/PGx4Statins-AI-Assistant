@@ -1,16 +1,19 @@
 openai:
   api_key: xxxx
-  model_name: text-embedding-ada-002
+  embedding_model_name: text-embedding-ada-002
+  chat_model_name: gpt-4
+  chat_search_type: mmr   # mmr or similarity
+  chat_search_k: 4        # number of best resources to pickup
 
-chromadb:
-  persist_directory: chroma-db/persist
+chromadb: # this is the settings for the vector database, persist_directory and collection_name are configurable
+  persist_directory: /path/to/chroma-db/persist
   chroma_db_impl: duckdb+parquet
   collection_name: slco1b1_collection
 
-data:
+data: # this is the settings for the data directory, directory is configurable
   directory:
-    - data/slco1b1/csvs
-    - data/slco1b1/pdfs
+    - /path/to/data/slco1b1/csvs
+    - /path/to/data/slco1b1/pdfs
 
 parse_pdf:
   chunk_size: 1000

@@ -2,14 +2,15 @@
 # Created by liwenw at 6/30/23
 
 patient_questions = [
-    "Will my genetic test results affect the type of statin I should take?",
-    "Can my SLCO1B1 test results explain why I've been experiencing side effects from my statin?",
-    "Could my genetic test results impact the dose of my statin medication?",
-    "I've been told I have a certain SLCO1B1 diplotype. What does that mean?",
-    "Are there any changes to my statin prescription due to my SLCO1B1 genetic test results?",
-    "I have a decreased function in SLCO1B1 according to my test. Does this mean I'm more likely to experience side effects from my statin?",
-    "Will my SLCO1B1 test results change the way my doctor manages my cholesterol?",
-    "My doctor said my SLCO1B1 test indicates poor function. Does this mean I shouldn't take statins?",
-    "Can my genetic test results affect how well my statin medication works?",
-    "What does it mean if I have a certain phenotype in SLCO1B1? Does this affect my cholesterol medication?"
+    "I take zocor  for my cholesterol. Recently my doctor told me my heart disease risk is high and did a pharmacogenetic test to see if he needs to adjust my dose. I got my result today and it says that I have SLCO1B1 poor function, what does this mean?"
+    "I am of Indian ethnicity and have a family history of diabetes. I have high cholesterol, and my doctor is concerned about heart disease. She recommended a genetic test, the results indicate that I have a rs4149056 variant. Will this impact usage of statins for me? What are alternatives? Does my ethnicity factor in some way? Let me know the sources of your information.",
+    "I take Reditrex for my rheumatoid arthritis. My doctor has prescribed Crestor for my cholesterol. I am worried that there is some association between my arthritis and cholesterol drugs, what should I do?",
+    "I heard that I should avoid grapefruit or grapefruit juice as I am taking Lipitor, is this true? I love grapefruit, will getting a genetic test help me find another cholesterol drug that will not interact with grapefruit? Can you also tell me what your sources are for this information?",
+    "I've been experiencing side effects from taking Crestor, like my body hurts. My doctor is suggesting a genetic test, he thinks that might explain if there is some kind of connection between my body pain with Crestor and my genes. Is this right? I would like to understand this better. Can you tell me what your sources are for this information?",
+    "I am an overweight african-american male, in my 50s and have been struggling with cholesterol issues for the last few years. My doctor has me on Lipitor but that was not working for me so he ordered a genetic test and says that I have something called SLCO1B1 decreased function. He says changing my medication will fix my issues. The doctor is not too busy and does not have enough time to talk to me. I still feel concerned, what if the new medication does not work? Is this because of my race or my weight? I feel like I am not getting enough information to understand this better.",
+    "I have been having severe muscle pain ever since I started taking Zocor for my cholesterol, so I stopped taking it. My doctor ordered a pharmacogenetic test to see if the side effects I was experiencing are related to my genes. I got my results back, I have SLCO1B1 poor function and my doctor says changing my medication should fix this problem. Will this really work? I don't want to go through that kind of pain again.",
+    "My doctor ordered a genetic test related to the medicines I take. My results shows SLCO1B1 diplotype of *1/*17. What does this mean?",
+    "I take Crestor for my cholesterol. My husband and I are planning on a baby. Can I continue taking Crestor during my pregnancy? Will it affect my baby?",
+    "What is the connection between my Zocor prescription and a genetic test? My doctor wants to increase my dosage but wants to order a genetic test first.",
+    "I take Lescol XL. My doctor thinks my risk of heart disease is high and did a genetic test before she can increase my dose. My test result shows “CYP2C9 intermediate metabolizer and to have SLCO1B1 poor function”. She wants to now prescribe a completely different medicine! What is happening? She was in a hurry and did not explain well.",
 ]

@@ -26,7 +26,7 @@ def upsert_csv(collection, filename, data_dir, i):
     for page in pages:
         collection.upsert(
             documents=page.page_content,
-            metadatas=[metadata],
+            metadatas=[page.metadata],
             ids=[str(i)]
         )
         i += 1
@@ -34,7 +34,7 @@ def upsert_csv(collection, filename, data_dir, i):
     return i
 
 
-def upsert_pdf(collection, filename, data_dir, i, chunk_size=300, chunk_overlap=50):
+def upsert_pdf(collection, filename, data_dir, i, chunk_size, chunk_overlap):
     metadata = {"source": filename}
     pdf_loader = PyPDFLoader(os.path.join(data_dir, filename))
     data = pdf_loader.load()
@@ -43,7 +43,7 @@ def upsert_pdf(collection, filename, data_dir, i, chunk_size=300, chunk_overlap=
     for text in texts:
         collection.upsert(
             documents=text.page_content,
-            metadatas=[metadata],
+            metadatas=[text.metadata],
             ids=[str(i)]
         )
         i += 1
@@ -81,7 +81,7 @@ def main():
     # openai.api_key = config.openai.api_key
     openai_ef = embedding_functions.OpenAIEmbeddingFunction(
                     api_key=openai_api_key,
-                    model_name=config.openai.model_name,
+                    model_name=config.openai.embedding_model_name,
                 )
 
     collection_name = config.chromadb.collection_name
@@ -92,8 +92,10 @@ def main():
         print(f"Ingest files at {data_dir}")
         for filename in os.listdir(data_dir):
             if filename.endswith(".pdf") and os.path.isfile(os.path.join(data_dir, filename)):
+                print(f"Upserting {filename}")
                 i = upsert_pdf(collection, filename, data_dir, i, chunk_size, chunk_overlap)
             elif filename.endswith(".csv") and os.path.isfile(os.path.join(data_dir, filename)):
+                print(f"Upserting {filename}")
                 i = upsert_csv(collection, filename, data_dir, i)
             else:
                 continue
