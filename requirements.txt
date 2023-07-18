@@ -83,6 +83,7 @@ pytz==2023.3
 pyxnat==1.5
 PyYAML==6.0
 rdflib==6.3.2
+regex==2023.6.3
 requests==2.31.0
 scipy==1.10.1
 simplejson==3.19.1
@@ -95,6 +96,7 @@ SQLAlchemy==2.0.16
 starlette==0.27.0
 sympy==1.12
 tenacity==8.2.2
+tiktoken==0.4.0
 tokenizers==0.13.3
 tqdm==4.65.0
 traits==6.3.2
