@@ -4,6 +4,7 @@
 from langchain.vectorstores.chroma import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
+# from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
 from langchain.chains import ConversationalRetrievalChain, RetrievalQAWithSourcesChain
 from langchain.schema import HumanMessage, AIMessage
 from dotenv import load_dotenv
@@ -48,7 +49,6 @@ def main():
     model = ChatOpenAI(
         openai_api_key=openai_api_key,
         model_name=config.openai.chat_model_name,
-        # max_tokens=8192,
         temperature=0.0,
         verbose=True
     )
@@ -94,8 +94,10 @@ def main():
         chain_type="stuff",
         retriever=retriever,
         return_source_documents=True,
+        reduce_k_below_max_tokens=True,
+        max_tokens_limit=8192,
         chain_type_kwargs=chain_type_kwargs,
-        verbose=True,
+        verbose=False,
     )
 
     while True:
