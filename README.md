@@ -67,6 +67,7 @@ You can run the following command to insert the data into the vector database(Yo
 
 ##### Question and Answering
 Once you complete data insertion, you can run the following command to start the question and answering application, which will load the data from the vector database and start the question and answering loop:
+
 For patient:
 ```
 1. conda activate <virtual-environment-name>
