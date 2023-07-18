@@ -12,21 +12,23 @@ import chromadb
 
 from omegaconf import OmegaConf
 import argparse
-
+from source_metadata_mapping import pick_metadata
 def create_parser():
     parser = argparse.ArgumentParser(description='demo how to use ai embeddings to chat.')
     parser.add_argument("-y", "--yaml", dest="yamlfile",
                         help="Yaml file for project", metavar="YAML")
     return parser
 
+
 def upsert_csv(collection, filename, data_dir, i):
-    metadata = {"source": filename}
+    metadata = pick_metadata(filename)
     csv_loader = CSVLoader(os.path.join(data_dir, filename))
     pages = csv_loader.load_and_split()
     for page in pages:
+        # print(page.metadata)
         collection.upsert(
             documents=page.page_content,
-            metadatas=[page.metadata],
+            metadatas=[metadata],
             ids=[str(i)]
         )
         i += 1
@@ -35,7 +37,7 @@ def upsert_csv(collection, filename, data_dir, i):
 
 
 def upsert_pdf(collection, filename, data_dir, i, chunk_size, chunk_overlap):
-    metadata = {"source": filename}
+    metadata = pick_metadata(filename)
     pdf_loader = PyPDFLoader(os.path.join(data_dir, filename))
     data = pdf_loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
@@ -43,7 +45,7 @@ def upsert_pdf(collection, filename, data_dir, i, chunk_size, chunk_overlap):
     for text in texts:
         collection.upsert(
             documents=text.page_content,
-            metadatas=[text.metadata],
+            metadatas=[metadata],
             ids=[str(i)]
         )
         i += 1
