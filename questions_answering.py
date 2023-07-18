@@ -112,13 +112,11 @@ def main():
         answer = response["answer"]
         source = response["source_documents"]
 
-
         # Display answer
         print("\nSources:")
         for document in source:
             print(document)
         print(f"\nAnswer: {answer}")
-
 
 if __name__ == "__main__":
     main()
