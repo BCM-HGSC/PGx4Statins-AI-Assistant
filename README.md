@@ -35,8 +35,8 @@ data:
     - /path/to/data/slco1b1/pdfs
 
 parse_pdf:
-  chunk_size: 1000
-  chunk_overlap: 50
+  chunk_size: 1000  # number of characters per chunk
+  chunk_overlap: 50  # number of characters to overlap between chunks
 
 ```
 Since we use openai api to do embedding and querying, your account's secret key which is available on the [website](https://platform.openai.com/account/api-keys) is needed. You can replace the following line in the config.yaml file:
@@ -54,9 +54,9 @@ export OPENAI_API_KEY='sk-xxxx'
 We choose Chroma as the vector database. You can find more information about Chroma [here](https://docs.trychroma.com/). We provide a script to insert the data into the vector database, For making things simple, we configure Chroma to save and load from local machine. Data will be persisted on exit and loaded on start (if it exists). You can replace the following line in the config.yaml file:
 ```commandline
 chromadb:
-  persist_directory: /path/to/chroma-db/persist
-  chroma_db_impl: duckdb+parquet
-  collection_name: slco1b1_collection
+  persist_directory: /path/to/chroma-db/persist  # directory to persist the database
+  chroma_db_impl: duckdb+parquet # database implementation
+  collection_name: slco1b1_collection  # name of the collection
 ```
 You can run the following command to insert the data into the vector database(You only need to run it once for the same config.yaml file)
 ```
@@ -66,12 +66,18 @@ You can run the following command to insert the data into the vector database(Yo
 ```
 
 ##### Question and Answering
-Once you complete data insertion, you can run the following command to start the question and answering application:
+Once you complete data insertion, you can run the following command to start the question and answering application, which will load the data from the vector database and start the question and answering loop:
+For patient:
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot
 3. python questions_answering.py -y config.yaml -r patient
-or. python questions_answering.py -y config.yaml -r provider
+```
+For provider:
+```
+1. conda activate <virtual-environment-name>
+2. cd </path/to/project>/PGx-slco1b1-chatbot
+3. python questions_answering.py -y config.yaml -r provider
 ```
 Typing 'exit' to exit the Question/Answering loop. And you can deactivate the virtual environment by running the following command:
 ```commandline
