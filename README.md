@@ -1,12 +1,36 @@
-### About the PGx AI Assistant 
+### Pharmacogenetic AI Assistant for Genetic Counseling and Personalized Care
 
-This proof of concept(POC) pilot project aims to explore the potential of OpenAI's GPT-4, in the field of genetic counseling and personalized care. The primary objective of this project was to develop an AI assistant targeted to both patients and healthcare providers to help fill knowledge gaps and respond to user queries for a specific use case in pharmacogenetic (PGx) testing, with a focus on SLCO1B1 diplotypes and statins, with the goal of improving the accessibility and interpretation of genetic test result. The AI assistant leverages context-aware GPT-4 and retrieval augmented generation (RAG). RAG builds on both retrieval based and generative methods thereby providing the appropriate context required for GPT-4's responses.
+The PGx AI Assistant is a proof of concept (POC) pilot project that explores the potential of OpenAI's GPT-4 in the field of genetic counseling and personalized care. The primary objective of this project is to develop an AI assistant that aids both patients and healthcare providers with addressing knowledge gaps, ultimately enhancing the accessibility and comprehension of genetic test results. This POC is tailored for a specific use case in pharmacogenetic (PGx) testing, with particular emphasis on SLCO1B1 diplotypes and statins.
 
-For this POC, we created a contextual knowledge base that consisted of the CPIC dataset for statins and related publications. The dataset is available in the data folder of this github repo. Next we created embeddings for this dataset using OpenAI's 'text-embedding-ada-002' model for context retrieval. These embeddings are stored in a Chroma vector database. Patient of provider queries to the AI assistant are converted into embeddings and pertinent information related to the query is retrieved from the vector database. This contextual information along with the user's query and appropriate prompts based on the role of the user is passed to GPT-4. The prompts provide safeguards for constraining the scope of GPT-4's responses to the provided context, and also customizes the language and tone of the response based on the role of the user. This resulted in responses that were for the most part accurate and relevant. However we did observe a discrepancy with the OpenAI's "text-embedding-ada-002" embedding model. Specific diplotype terms such as '*1/*1' were not recognized by the embedding model resulting in inaccurate contextual information. However as we constrained the GPT-4's responses via prompt engineering to respond only if an answer was avaiable, we were able to avoid inaccurate responses for the most part though the potential for confabulation and hallucination was still present. Even with this and other challenges, overall, this project demonstrated the immense potential of GPT-4 for augmenting an area such as genetic counseling and personalized care. Information about this project including other lessons learned, challenges etc is illustrated in this preprint <add reference>.
+#### Technology Overview:
+The PGx AI Assistant leverages large language models, making use of GPT-4's context-aware capabilities and retrieval augmented generation (RAG) methodology. By integrating the strengths of retrieval-based and generative methods, the AI assistant is equipped to provide responses that are contextually relevant and aligned with the specific queries it receives.
 
-The steps below provide a walkthrough of setting this project up locally and executing your own queries. Please note that the contextual dataset is constrained to SLOCO1B1 and statins so questions have to be related to that area. We have provided some sample questions in patient-questions.py and provider_questions.py for your reference.
+#### Contextual Knowledge Base
+To support the AI assistant's understanding of pharmacogenetic testing and statins, a contextual knowledge base was created. This knowledge base consists of the CPIC dataset for statins and relevant publications. The dataset can be found in the "data" folder of this GitHub repository.
 
-### Getting Started with PGx-slco1b1-chatbot
+#### Utilizing Embeddings for Context Retrieval
+The contextual knowledge base is transformed into embeddings using OpenAI's 'text-embedding-ada-002' model, specifically designed for context retrieval. These embeddings are then stored in a Chroma vector database. When a patient or provider submits a query to the AI assistant, the query is converted into embeddings. Pertinent information related to the query is then retrieved from the vector database. This contextual information, along with the user's query and appropriate prompts based on the user's role, is passed to GPT-4.
+
+#### Prompts for Accuracy and Customization
+To ensure accuracy and relevance in the AI assistant's responses, prompts are carefully engineered. These prompts serve two essential purposes:
+Constraining GPT-4's Responses: The prompts limit the scope of GPT-4's responses to the provided context, ensuring that the generated answers are within the context of the query.
+Customizing Language and Tone: The prompts adapt the language and tone of the AI assistant's responses based on whether the user is a patient or a healthcare provider, providing a personalized response.
+
+#### Challenges and Mitigations
+A significant challenge we encountered during the POC was related to the OpenAI "text-embedding-ada-002" model's occasional inability to recognize diplotype terms like '*1/*1', resulting in contextual inaccuracies. It is worth noting that these large language models are not specifically pre-trained on biomedical knowledge, hence this limitation was not entirely unexpected. To address this concern in future developments, we intend to explore biomedical models that may offer more domain-specific understanding.
+
+For this POC, we navigated around the issue by implementing constraints on GPT-4's responses. We ensured that answers were provided only when supported by contextual information, significantly reducing the impact of inaccuracies. However, it is essential to acknowledge that some potential for confabulation and hallucination remains despite our efforts to minimize inaccuracies. As we move forward, we will continue to refine our approach to enhance the AI assistant's performance in this regard.
+
+#### Project Results and Future Potential
+Despite the encountered challenges, this POC showcased the remarkable potential of GPT-4 in augmenting genetic counseling and personalized care. The AI assistant, for the most part, delivered precise and pertinent responses, promising to a substantial improvement in the accessibility and comprehension of genetic test results.
+
+For a comprehensive understanding of this project, including additional insights gained, lessons learned, and an evaluation of the results, please refer to the preprint document [add reference]. This document provides a detailed account of the project's journey, contributing to the broader knowledge base in the field of genetic counseling and personalized care.
+
+As we move forward, we envision further refinements and innovations in this technology, leveraging GPT-4's capabilities, and exploring advancements in biomedical models.
+
+#### Getting Started with the PGx AI assistant
+To get started with this project and run your own queries, follow the step-by-step walkthrough below. Please keep in mind that the contextual dataset is limited to SLOCO1B1 and statins, so all questions should be related to this specific area. We have included sample questions in patient-questions.py and provider_questions.py for your reference.
+
 #### Check out the project
 You might create a new folder for the project and check out the project in the folder:
 ```commandline
