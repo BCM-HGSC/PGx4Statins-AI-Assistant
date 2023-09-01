@@ -1,27 +1,16 @@
 # -*- coding:utf-8 -*-
 # Created by liwenw at 8/28/23
 
-import sys
-sys.path.insert(0, '/Users/liwenw/PycharmProjects/ai/PGx-slco1b1-chatbot/langchain/libs/langchain/')
-
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
 from omegaconf import OmegaConf
 from chromadb.config import Settings
-from langchain.chains.qa_with_sources import load_qa_with_sources_chain
-from langchain.chains import LLMChain
-from langchain.chains.question_answering import load_qa_chain
-from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_PROMPT
-from langchain.llms import OpenAI
 from langchain.chains.llm import LLMChain
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.chains.conversational_retrieval.prompts import CONDENSE_QUESTION_PROMPT, QA_PROMPT
 from langchain.chains.question_answering import load_qa_chain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
-import argparse
 
 from templates import system_provider_template, human_provider_template, system_patient_template, human_patient_template
 from langchain.prompts.chat import (
@@ -94,10 +83,6 @@ class RetrievalAssistant:
         llm = ChatOpenAI(temperature=0, model_name=self.config.openai.chat_model_name, )
         question_generator = LLMChain(llm=llm, prompt=question_generate_prompt)
 
-        # question_generator = LLMChain(llm=llm, prompt=CONDENSE_QUESTION_PROMPT)
-
-        # streaming_llm = ChatOpenAI(streaming=True, callbacks=[StreamingStdOutCallbackHandler()], temperature=0)
-        # streaming_llm = ChatOpenAI(streaming=True, temperature=0)
         streaming_llm = ChatOpenAI(streaming=True, model_name=self.config.openai.chat_model_name,
                                    callbacks=[StreamingStdOutCallbackHandler()], temperature=0)
         doc_chain = load_qa_chain(streaming_llm, chain_type="stuff", prompt=self.prompt, )

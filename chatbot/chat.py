@@ -8,8 +8,6 @@ from omegaconf import OmegaConf
 import argparse
 
 from chatbot import RetrievalAssistant, Message
-from streaming_handler import CustomStreamingHandler
-
 def parse_args(args):
     parser = argparse.ArgumentParser(description='demo how to use streamlit for ai embeddings to question/answer.')
     parser.add_argument("-y", "--yaml", dest="yamlfile",
@@ -27,8 +25,6 @@ yamlfile = args.yamlfile
 config = OmegaConf.load(yamlfile)
 
 role = args.role
-
-# Set instruction
 
 ### CHATBOT APP
 
@@ -61,14 +57,8 @@ if st.button('Submit', key='generationSubmit'):
     else:
         messages = []
 
-    # user_message = Message('user',prompt)
-    # messages.append(user_message.message())
-
     response = query(prompt)
-    print(response)
-
-    # Debugging step to print the whole response
-    # st.write(response)
+    # print(response)
 
     st.session_state.past.append(prompt)
     st.session_state.generated.append(response['answer'])
