@@ -1,6 +1,9 @@
 # -*- coding:utf-8 -*-
 # Created by liwenw at 6/12/23
 
+import sys
+sys.path.insert(0, '/Users/liwenw/PycharmProjects/ai/PGx-slco1b1-chatbot/langchain/libs/langchain/')
+
 import os
 import openai
 from langchain.document_loaders import CSVLoader
@@ -13,6 +16,8 @@ import chromadb
 from omegaconf import OmegaConf
 import argparse
 from source_metadata_mapping import pick_metadata
+
+
 def create_parser():
     parser = argparse.ArgumentParser(description='demo how to use ai embeddings to chat.')
     parser.add_argument("-y", "--yaml", dest="yamlfile",
@@ -28,6 +33,21 @@ def upsert_csv(collection, filename, data_dir, i):
         # print(page.metadata)
         collection.upsert(
             documents=page.page_content,
+            metadatas=[metadata],
+            ids=[str(i)]
+        )
+        i += 1
+
+    return i
+
+def upsert_txt(collection, filename, data_dir, i):
+    metadata = pick_metadata(filename)
+    file = open(os.path.join(data_dir, filename), 'r')
+    lines = file.readlines()
+    for line in lines:
+        # print(page.metadata)
+        collection.upsert(
+            documents=line,
             metadatas=[metadata],
             ids=[str(i)]
         )
@@ -98,7 +118,7 @@ def main():
                 i = upsert_pdf(collection, filename, data_dir, i, chunk_size, chunk_overlap)
             elif filename.endswith(".csv") and os.path.isfile(os.path.join(data_dir, filename)):
                 print(f"Upserting {filename}")
-                i = upsert_csv(collection, filename, data_dir, i)
+                i = upsert_txt(collection, filename, data_dir, i)
             else:
                 continue
 
