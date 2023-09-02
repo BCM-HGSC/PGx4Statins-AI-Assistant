@@ -69,10 +69,7 @@ parse_pdf:
 * The application utilizes the OpenAI API for embedding and querying.
 * Replace the following line in the config.yaml file with your OpenAI account's secret key, available on the [website](https://platform.openai.com/account/api-keys). 
 ```
-openai:
-  api_key: sk-xxxx
-```
-* Alternatively, for more security, set it as the OPENAI_API_KEY environment variable before running the application:
+For security we recommend setting the OPENAI_API_KEY as an environment variable before running the application. See instructions here [website](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
 ```
 export OPENAI_API_KEY='sk-xxxx'
 ```
