@@ -8,6 +8,7 @@ from omegaconf import OmegaConf
 import argparse
 
 from chatbot import RetrievalAssistant, Message
+
 def parse_args(args):
     parser = argparse.ArgumentParser(description='demo how to use streamlit for ai embeddings to question/answer.')
     parser.add_argument("-y", "--yaml", dest="yamlfile",

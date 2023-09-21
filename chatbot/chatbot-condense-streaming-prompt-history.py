@@ -18,6 +18,7 @@ from langchain.prompts.chat import (
     SystemMessagePromptTemplate,
     HumanMessagePromptTemplate,
 )
+
 def create_parser():
     parser = argparse.ArgumentParser(description='demo how to use ai embeddings to question/answer.')
     parser.add_argument("-y", "--yaml", dest="yamlfile",
@@ -81,8 +82,6 @@ from langchain.prompts import PromptTemplate
 question_generate_prompt = PromptTemplate.from_template(template)
 question_generator = LLMChain(llm=llm, prompt=question_generate_prompt)
 
-# question_generator = LLMChain(llm=llm, prompt=CONDENSE_QUESTION_PROMPT)
-
 chain = ConversationalRetrievalChain(
     retriever=vectorstore.as_retriever(),
     combine_docs_chain=doc_chain,
@@ -105,7 +104,7 @@ for question in questions:
     result = chain({"question": question, "chat_history": chat_history})
     #print(result)
     print('\n')
-    chat_history = [(question, result["answer"])]
+    chat_history.append((question, result["answer"]))
 
 
 
