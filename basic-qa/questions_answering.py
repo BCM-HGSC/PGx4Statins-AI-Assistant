@@ -5,8 +5,7 @@ from langchain.vectorstores.chroma import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 # from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
-from langchain.chains import ConversationalRetrievalChain, RetrievalQAWithSourcesChain
-from langchain.schema import HumanMessage, AIMessage
+from langchain.chains import RetrievalQAWithSourcesChain
 from dotenv import load_dotenv
 import os
 from chromadb.config import Settings
