@@ -6,11 +6,7 @@ import argparse
 
 from chroma_retriever import ChromaRetriever
 from condense_questions import condense_questions
-from templates import system_provider_template, human_provider_template, system_patient_template, human_patient_template
-
-
-yamlfile = "/Users/liwenw/PycharmProjects/ai/PGx-slco1b1-chatbot/config-1000-50.yaml"
-config = OmegaConf.load(yamlfile)
+from templates import system_provider_template, system_patient_template
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description='demo how to use streamlit for ai embeddings to question/answer.')
@@ -53,8 +49,6 @@ if prompt := st.chat_input(f"What do you want to know: ", key="input"):
         {"role": m["role"], "content": m["content"]}
         for m in st.session_state.messages
     ]
-
-    # print(messages)
 
     questions = [m["content"] for m in st.session_state.messages if m["role"] == "user"]
 
