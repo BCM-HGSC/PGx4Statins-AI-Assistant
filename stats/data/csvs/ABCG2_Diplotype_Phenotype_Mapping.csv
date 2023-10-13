@@ -1,0 +1,3 @@
+﻿Patients with ABCG2 Diplotype 'rs2231142 reference (G)/rs2231142 reference (G)' display ABCG2 Normal Function Phenotype. The corresponding EHR notation for this diplotype categorizes it as Normal/Routine/Low Risk.
+Patients with ABCG2 Diplotype 'rs2231142 reference (G)/rs2231142 variant (T)' display ABCG2 Decreased Function Phenotype. The corresponding EHR notation for this diplotype categorizes it as Abnormal/Priority/High Risk.
+Patients with ABCG2 Diplotype 'rs2231142 variant (T)/rs2231142 variant (T)' display ABCG2 Poor Function Phenotype. The corresponding EHR notation for this diplotype categorizes it as Abnormal/Priority/High Risk.
