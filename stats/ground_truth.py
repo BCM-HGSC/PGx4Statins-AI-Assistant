@@ -17,7 +17,12 @@ question_file = config.validation_file
 print(question_file)
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
+
 def evaluate_conditions(conditions,answer):
+    '''
+    Ex - condition = [[str1,str2],[str3,str4]]
+    evaluates to (str1 and str2) or (str3 and str4)
+    '''
     boolean_list = []
     for condition in conditions:
         if len(condition) > 1:
@@ -36,6 +41,7 @@ def evaluate_conditions(conditions,answer):
 def main():
     test_questions = pd.read_csv(question_file)
     df_final_summary = test_questions.groupby('category').agg({'question': 'count'}).reset_index()
+    df_final_individual_summary = test_questions
 
     embeddings = OpenAIEmbeddings()
     collection_name = config.chromadb.collection_name
@@ -63,11 +69,11 @@ def main():
             evaluation_dict_final = {}
 
             for q, a in zip(test_questions['question'], test_questions['answer']):
-                a = a.strip()
-                q = q.strip()
                 output_pagecontent_handler.write(f"question: {q}\n")
                 # set up  data structure
                 evaluation_per_question = []
+
+                # retrieve docs from vector store
                 retrieved_docs = {}
                 docs = retriever.get_relevant_documents(q)
                 output_pagecontent_handler.write(f"retrieved_docs: {docs}\n\n")
@@ -75,12 +81,14 @@ def main():
                 for idx, doc in enumerate(docs):
                     retrieved_docs[idx + 1] = [doc.page_content]
 
+                # evaluate conditions on retrieved docs
                 conditions = ast.literal_eval(a)
                 for key, item in retrieved_docs.items():
                     evaluate_response = evaluate_conditions(conditions, item[0])
                     evaluation_per_question.append(evaluate_response)
-                evaluation_dict_final[q] = evaluation_per_question  # uncomment below to check actual conditions being checked on response
+                evaluation_dict_final[q] = evaluation_per_question
 
+            # create dataframe for evaluation results and write to csv
             name_columns = ['question', 'category']
             num_columns = [i for i in range(0, k)]
             columns = name_columns + num_columns
@@ -91,15 +99,20 @@ def main():
                                                               left_on="index", right_on="question")[columns]
             df_evaluation['total_matches'] = df_evaluation[num_columns].astype(int).sum(axis=1)
             df_evaluation['success'] = (df_evaluation['total_matches'] >= 1).astype(int)
-            print(df_evaluation.shape)
-            print(df_evaluation.head())
+            df_final_individual_summary[f"success_{chat_search_type}_{k}"] = df_evaluation['success']
+
             df_evaluation.to_csv(output_summary)
 
             output_pagecontent_handler.close()
             df_interm_summary = df_evaluation.groupby('category').agg({'success': 'mean', 'question': 'count'}).reset_index()
             df_final_summary[f"{chat_search_type}_{k}"] = df_interm_summary['success']
+
+    # write summary final results
+    df_final_individual_summary.to_csv("final_individual_summary.csv", index=False)
     df_final_summary.to_csv(final_summary)
     print(df_final_summary)
+
+
 
 
 if __name__ == "__main__":

@@ -1,14 +1,14 @@
 ,question,category,0,1,2,3,4,total_matches,success
-0,What is the associated phenotype for the SLCO1B1 *1/*5 diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
+0,What is the associated phenotype for the SLCO1B1 *1/*5 diplotype?,Diplotype Phenotype recognition,True,False,False,False,False,1,1
 1,My patient has a SLCO1B1 *1/*10 diplotype. What is the phenotype for this diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
 2,My patient's PGx result indicates CYP2C9 *2 *6 diplotype. Does this mean she is a poor metabolizer?,Diplotype Phenotype recognition,False,True,False,False,False,1,1
 3,What is the  phenotype for  SLCO1B1 *6/*31 diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
-4,My patient has the ABCG2 rs2231142 reference on both alleles. is this mean she has normal function?,Diplotype Phenotype recognition,True,True,False,False,True,3,1
+4,"My patient has the ABCG2 rs2231142 reference on both alleles, is this mean she has normal function?",Diplotype Phenotype recognition,False,True,True,True,False,3,1
 5,What are some diplotypes for SLCO1B1 Increased Function impacting statins?,Diplotype Phenotype recognition,False,False,False,False,True,1,1
-6,A SLCO1B1 *1/*20 diplotype would have which phenotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
+6,A SLCO1B1 *1/*20 diplotype would have which phenotype?,Diplotype Phenotype recognition,False,False,False,False,True,1,1
 7,Wht phenotype is associated with SLCO1B1 *14/*14 diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
 8,What is the associated phenotype for the CYP2C9 *2/*15 diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
-9,List SLCO1B1 diplotypes with a normal function phenotype.,Diplotype Phenotype recognition,False,False,False,False,False,0,0
+9,"List  SLCO1B1 diplotypes with a ""normal function"" phenotype.",Diplotype Phenotype recognition,True,True,True,True,False,4,1
 10,My patient has ABCG2 decreased function. Can you tell me what variant he has?,Diplotype Phenotype recognition,True,False,False,False,False,1,1
 11,My patient has rs2231142 variant (T) in the  ABCG2 gene. What is her phenotype?,Diplotype Phenotype recognition,True,False,False,False,False,1,1
 12,My test results show rs2231142 variant and reference on ABCG2 gene. What does this mean?,Diplotype Phenotype recognition,True,False,True,False,False,2,1
@@ -18,7 +18,7 @@
 16,My patient has *3/*31 diplotype in the CYP2C9 gene. What is the phenotype?,Diplotype Phenotype recognition,True,False,False,False,False,1,1
 17,What phenotype is associated with the SLCO1B1 *1/*37 diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
 18,Can you tell me the phenotype for the CYP2C9 *1/*3 diplotype?,Diplotype Phenotype recognition,False,True,False,False,False,1,1
-19,What is the phenotype for the SLCO1B1 *14/*20 diplotype?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
+19,What is the phenotype for the SLCO1B1 *14/*20 diplotype?,Diplotype Phenotype recognition,True,False,False,False,False,1,1
 20,My patient's PGx result indicates CYP2C9 *1/*6 diplotype. What does this mean?,Diplotype Phenotype recognition,False,False,False,False,False,0,0
 21,What phenotype is associated with the ABCG2 rs2231142 variant on both alleles?,Diplotype Phenotype recognition,True,False,False,False,False,1,1
 22,My patient's test results show *12/*23 on SLCOB1. What does this mean?,Diplotype recognition,False,False,False,False,False,0,0
@@ -38,72 +38,53 @@
 36,What does a CYP2C9 *3/*5 diplotype indicate?,Diplotype recognition,False,True,False,False,False,1,1
 37,My patient's genetic test shows SLCO1B1 *27/*49. What gene is this associated with?,Diplotype recognition,False,False,True,False,False,1,1
 38,Can you explain the SLCO1B1 *34/*42 diplotype?,Diplotype recognition,True,False,False,False,False,1,1
-39,My genetic test indicates a CYP2C9 *2/*8 genotype. What gene is this related to?,Diplotype recognition,False,True,False,False,False,1,1
+39,My genetic test indicates a CYP2C9 *2/*8 genotype. What gene is this related to?,Diplotype recognition,False,False,True,False,False,1,1
 40,Is there any difference between SLCO1B1 decreased function and SLCO1B1 possible decreased function for simvastatin dosage?,Phenotype and Drug recognition,False,False,False,False,False,0,0
-41,How does SLCO1B1 decreased function affect simvastatin dosage?,Phenotype and Drug recognition,True,False,False,False,False,1,1
+41,How does SLCO1B1 decreased function affect simvastatin dosage ?,Phenotype and Drug recognition,True,False,False,False,False,1,1
 42,Will my patient's genetic status for the SLCO1B1 gene affect their atorvastatin prescription?,Phenotype and Drug recognition,False,False,False,True,False,1,1
-43,What is the effect of phenotype of SLCO1B1 Normal Function on fluvastatin dosage?,Phenotype and Drug recognition,False,False,False,False,False,0,0
-44,My patient has a SLCO1B1 Possible Decreased Function. How does this impact pitavastatin dosage?,Phenotype and Drug recognition,True,False,False,False,False,1,1
-45,What is the effect of a pgx result of SLCO1B1 Indeterminate on lovastatin dosage?,Phenotype and Drug recognition,False,False,False,False,False,0,0
+43,What is the effect of phenotype of SLCO1B1 Normal Function on fluvastatin dosage ?,Phenotype and Drug recognition,False,False,False,False,False,0,0
+44,My patient has a SLCO1B1 Possible Decreased Function. How does this impact pitavastatin dosage ?,Phenotype and Drug recognition,True,False,False,False,False,1,1
+45,What is the effect of a pgx result of SLCO1B1 Indeterminate on lovastatin dosage ?,Phenotype and Drug recognition,False,False,False,False,False,0,0
 46,My patient has the following phenotypes -SLCO1B1 Poor Function. How does this impact their atorvastatin dosage?,Phenotype and Drug recognition,True,False,False,False,False,1,1
-47,I take pravachol for my cholesterol. My doctor recently ordered a genetic test for me and I just got the results. It looks like I have something called SLCO1B1 increased function. What does this mean for my cholesterol or pravachol?,Phenotype and Drug recognition,False,False,False,False,False,0,0
+47,I take pravastatin for my cholesterol. My doctor recently ordered a genetic test for me and I just got the results. It looks like I have something called SLCO1B1 increased function. What does this mean for my cholesterol and my medication?,Phenotype and Drug recognition,False,False,False,False,False,0,0
 48,How does SLCO1B1 increased function affect rosuvastatin dosage?,Phenotype and Drug recognition,True,False,False,False,False,1,1
 49,What are the implications of having SLCO1B1 possible decreased function when taking pravastatin?,Phenotype and Drug recognition,False,False,False,False,False,0,0
-50,How does CYP2C9 poor metabolizer status affect simvastatin prescription?,Phenotype and Drug recognition,True,False,False,False,False,1,1
+50,How does CYP2C9 poor metabolizer status affect fluvastatin prescription?,Phenotype and Drug recognition,True,True,False,False,False,2,1
 51,My patient has SLCO1B1 normal function. How does this impact their pitavastatin dosage?,Phenotype and Drug recognition,False,False,False,False,False,0,0
 52,What is the effect of SLCO1B1 poor function on atorvastatin dosage?,Phenotype and Drug recognition,True,True,False,False,False,2,1
 53,"My patient's pgx results just came back. She is a CYP2C9 poor metabolizer and also appears to have SLCO1B1 decreased function, what should I do about her prescription?",Double Phenotype and Drug recognition,False,False,False,False,False,0,0
-54,Is a person with CYP2C9 poor metabolizer and to have SLCO1B1 poor function at increased risk of myopathy if they take fluvastain?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
+54,Is a person with CYP2C9 poor metabolizer and to have SLCO1B1 poor function at increased risk of myopathy if they take fluvastatin?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
 55,What are rosuvastatin dosage implications for ABCG2 poor and SLCO1B1 decreased function?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
 56,Apparently I have something called  ABCG2 decreased function and SLCO1B1 poor function and this might affect my rosuvastatin prescription? Can you help me understand this better?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
 57,My patient has SLCO1B1 decreased fucntion. I did not test her for ABCG2 or CYP2C9. Do I need to make any changes to her rosuvastatin dose? I currently have her on the standard dose. She has not complained of myopathy.,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
 58,How should I adjust the dosage of rosuvastatin for a patient with ABCG2 decreased function and SLCO1B1 normal function?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
-59,My patient's genetic test shows both CYP2C9 normal metabolizer and SLCO1B1 possible decreased function. What does this mean for their fluvastatin prescription?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
-60,What drug should I order for a phenotype of SLCO1B1 Possible Decreased Function and ABCG2 Decreased Function?,Double Phenotype recognition,False,False,False,False,False,0,0
+59,My patient's genetic test shows both CYP2C9 normal metabolizer and SLCO1B1 poor function. What does this mean for their fluvastatin prescription?,Double Phenotype and Drug recognition,False,False,False,False,False,0,0
+60,What drug should I order for a phenotype of SLCO1B1 Possible Decreased Function and ABCG2 Poor Function?,Double Phenotype recognition,False,False,False,False,False,0,0
 61,What are the guidelines for SLCO1B1 Poor Function and ABCG2 Decreased Function ?,Double Phenotype recognition,False,False,False,False,False,0,0
-62,My patient has SLCO1B1 Normal Function and ABCG2 Normal Function. What are the drug dosage guidelines?,Double Phenotype recognition,False,False,False,False,False,0,0
-63,"My patient's Pgx results indicate SLCO1B1 Increased Function and ABCG2 Normal Function, her SLCO1B1 diplotype is *14/*14. What should I know about appropriate drug dosage?",Double Phenotype recognition,False,False,False,False,False,0,0
-64,What is SAMS risk for a patient with SLCO1B1 Increased Function and ABCG2 Poor Function ?,Double Phenotype recognition,False,False,False,False,False,0,0
-65,How should I adjust fluvastation dose for my patient with CYP2C9 poor metabolizer? They were not tested on SLCO1B1.,Double Phenotype recognition,True,False,False,False,False,1,1
+62,My patient has SLCO1B1 Poor Function and ABCG2 Normal Function. What are the drug dosage guidelines?,Double Phenotype recognition,False,False,True,False,False,1,1
+63,My patient's Pgx results indicate SLCO1B1 Increased Function and ABCG2 Poor Function. What should I know about appropriate drug dosage?,Double Phenotype recognition,False,False,False,False,False,0,0
+64,What is myotpathy risk for a patient with SLCO1B1 Increased Function and ABCG2 Poor Function ?,Double Phenotype recognition,False,False,False,False,False,0,0
+65,How should I adjust fluvastation dose for my patient with CYP2C9 poor metabolizer? They were not tested on SLCO1B1.,Double Phenotype recognition,True,True,False,False,False,2,1
 66,I ordered a pgx test for my patient before prescribing fluvastatin. The SLCO1B1 result was indeterminate and the CYP2C9 gene shows intermediate metabolizer. Can I prescrible recommended dosage or should I adjust dosage based on their pgx result?,Double Phenotype recognition,False,False,False,False,False,0,0
 67,My patient has SLCO1B1 decreased fucntion. I did not test her for ABCG2 or CYP2C9. Do I need to make any changes to her fluvastatin dose? I currently have her on the standard dose. She has not complained of myopathy.,Double Phenotype recognition,False,False,False,False,False,0,0
 68,My patient is CYP2C9 normal metabolizer and SLCO1B1 poor function. Does this affect her statin dosing?,Double Phenotype recognition,False,False,False,False,False,0,0
 69,My patient is CYP2C9 poor metabolizer and SLCO1B1 poor function. Does this affect her statin dosing?,Double Phenotype recognition,False,False,False,False,False,0,0
-70,My patient takes Lescol and complained of muscle pains. I orderded a pgx test targeting statins. His results show CYP2C9 intermediate metabolizer and SLCO1B1 possible decreased function. What does this mean for his lescol.,Double Phenotype recognition,False,False,False,False,False,0,0
+70,My patient takes fluvastatin and complained of muscle pains. I orderded a pgx test targeting statins. His results show CYP2C9 intermediate metabolizer and SLCO1B1 possible decreased function. What does this mean for his lescol.,Double Phenotype recognition,False,False,False,False,False,0,0
 71,My patient's pgx result shows poor function for both ABCG2 and SLCO1B1. How does this affect her statin dosing?,Double Phenotype recognition,False,False,False,False,False,0,0
 72,My patient's pgx result shows ABCG2 poor function and SLCO1B1 normal function. How does this affect her statin dosing?,Double Phenotype recognition,False,False,False,False,False,0,0
 73,Does ABCG2 normal function and SLCO1B1 increased function impact rosuvastatin prescription?,Double Phenotype recognition,False,False,False,False,False,0,0
-74,What are the implications on Crestor dosage for SLCO1B1 increased function and ABCG2 poor function?,Brand recognition,True,True,True,False,False,3,1
-75,My patient has a SLCO1B1 possible decreased function and is currently take Lipitor. What are the risks?,Brand recognition,False,True,False,True,False,2,1
-76,What is the generic name for brand Livalo ?,Brand recognition,False,True,False,False,False,1,1
-77,What are the risks of pravachol on a *20/*37 diplotype ?,Brand recognition,False,False,False,False,False,0,0
-78,What are the risks of pravachol on a SLCO1B1 Poor Function phenotype ?,Brand recognition,True,False,True,False,False,2,1
-79,What phenotype function causes increased myopathy risk for mevacor?,Brand recognition,False,False,False,False,False,0,0
-80,What SLCO1B1 phenotype function causes increased myopathy risk for mevacor?,Brand recognition,False,True,False,False,False,1,1
-81,My patient has SLCO1B1 increased function. Does this cause increased myopathy risk for mevacor?,Brand recognition,False,False,False,False,False,0,0
-82,What is the brand name for rosuvastatin?,Brand recognition,True,False,True,False,False,2,1
-83,What is the brand name for fluvastatin?,Brand recognition,False,False,False,False,False,0,0
-84,What is the brand name for simvastatin?,Brand recognition,False,False,False,False,False,0,0
-85,What is the generic name for Zocor?,Brand recognition,False,False,False,False,True,1,1
-86,What is the generic name for Crestor?,Brand recognition,False,False,False,True,False,1,1
-87,What is the generic name for Lescol?,Brand recognition,False,False,False,False,False,0,0
-88,What is the generic name for Lipitor?,Brand recognition,True,True,False,True,False,3,1
-89,What is the generic name for the brand Altoprev?,Brand recognition,False,False,False,False,False,0,0
-90,What are the implications of taking Mevacor with a SLCO1B1 decreased function phenotype?,Brand recognition,False,False,False,False,False,0,0
-91,My patient is on Zocor. Are there any genetic considerations I should be aware of?,Brand recognition,True,False,True,False,False,2,1
-92,What is the brand name for pitavastatin?,Brand recognition,False,False,False,False,False,0,0
-93,What are the guidelines for a phenotype of SLCO1B1 Poor Function?,Phenotype recognition,False,False,False,False,False,0,0
-94,My patient has SLCO1B1 Indeterminate phenotype. What statin should I prescribe?,Phenotype recognition,False,False,False,False,False,0,0
-95,What are the associated drugs for a phenotype of SLCO1B1 Decreased Function?,Phenotype recognition,True,False,False,False,False,1,1
-96,What does it mean to have a phenotype of SLCO1B1 No Result?,Phenotype recognition,False,False,False,False,False,0,0
-97,What are statin dosage guidelines for a phenotype of SLCO1B1 Decreased Function?,Phenotype recognition,False,True,False,False,False,1,1
-98,My pharma genetic test shows that I have SLCO1B1 increased function. Does this impact any medications I take?,Phenotype recognition,True,False,False,False,False,1,1
-99,My patient takes Livalo for their high cholesterol and is complaining of muscle pain after they started taking their medication. Genetic test results show that they have SLCO1B1 decreased function. How should I adjust dosage?,Phenotype recognition,False,True,False,False,False,1,1
-100,My patient takes Simvastatin but is complaining of myopathy. Can you tell me the genes and protien function of those genes that could potentially cause myopathy so that I can order an appropriate pgx test for my patient? What should be the predicted phenotype function I should consider to adjust dosage?,Phenotype recognition,False,False,False,False,False,0,0
-101,"My pgx test result shows that I have possible decreased function in the gene slco1b1, what does this mean for my  zocor medication?",Phenotype recognition,False,False,True,True,False,2,1
-102,"My patient takes pravastatin, can poor function SLCO1B1 phenotype cause myopathy?",Phenotype recognition,False,False,False,False,False,0,0
-103,"My patient takes zocor, what SLCO1B1 phenotype  can cause myopathy?",Phenotype recognition,False,False,False,False,False,0,0
-104,What phenotype function causes increased myopathy risk for lovastatin?,Phenotype recognition,False,False,True,False,False,1,1
-105,"My patient has increased fucntion for the SLCO1B1 gene,  do I need to adjust his statin dosage?",Phenotype recognition,False,False,False,False,True,1,1
-106,"My patient is on atorvastatin and seems to be developing atorvastatin induced myopathy. I have ordered a PGx test and results show that she has decreased function in slco1b1, what are CPIC recommendations?",Phenotype recognition,False,False,False,True,False,1,1
-107,What are the implications of having a SLCO1B1 increased function phenotype?,Phenotype recognition,False,False,False,False,False,0,0
+74,What are the CPIC guidelines for a phenotype of SLCO1B1 Poor Function?,Phenotype recognition,False,False,False,False,False,0,0
+75,My patient has SLCO1B1 decreased function . What statin should I prescribe?,Phenotype recognition,True,False,False,False,False,1,1
+76,What are the associated drugs for a phenotype of SLCO1B1 Decreased Function?,Phenotype recognition,True,False,False,False,False,1,1
+77,What does it mean to have SLCO1B1 Increased function?,Phenotype recognition,False,False,False,False,False,0,0
+78,What are statin dosage guidelines for SLCO1B1 Decreased Function?,Phenotype recognition,True,False,False,False,False,1,1
+79,My pharma genetic test shows that I have SLCO1B1 increased function. Does this impact any medications I take?,Phenotype recognition,True,False,False,False,False,1,1
+80,My patient takes pravastatin for their high cholesterol and is complaining of muscle pain after they started taking their medication. Genetic test results show that they have SLCO1B1 decreased function. How should I adjust dosage?,Phenotype recognition,False,True,False,False,False,1,1
+81,My patient takes Simvastatin but is complaining of myopathy. Can you tell me the genes and  function of those genes that could potentially cause myopathy so that I can order an appropriate pgx test for my patient?,Phenotype recognition,False,False,False,False,False,0,0
+82,"My pgx test result shows that I have possible decreased function in the gene slco1b1, what does this mean for my statin medication?",Phenotype recognition,False,True,True,False,False,2,1
+83,"My patient takes pravastatin, can poor function SLCO1B1 phenotype cause myopathy?",Phenotype recognition,False,False,False,False,False,0,0
+84,"My patient takes simvastatin, what SLCO1B1 phenotype  can cause myopathy?",Phenotype recognition,False,False,False,False,False,0,0
+85,What phenotype function causes increased myopathy risk for lovastatin?,Phenotype recognition,False,False,True,False,False,1,1
+86,"My patient has increased fucntion for the SLCO1B1 gene,  do I need to adjust his statin dosage?",Phenotype recognition,False,False,False,False,True,1,1
+87,"My patient is on atorvastatin and seems to be developing atorvastatin induced myopathy. I have ordered a PGx test and results show that she has decreased function in slco1b1, what are CPIC recommendations?",Phenotype recognition,False,False,False,True,False,1,1
+88,What are the implications of having a SLCO1B1 increased function phenotype?,Phenotype recognition,False,False,False,False,False,0,0
