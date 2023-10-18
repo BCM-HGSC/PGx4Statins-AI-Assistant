@@ -2,7 +2,7 @@
 
 The main purpose of the section is to create a ground truth results based on the best matching documents for a set of questions. 
 We use following processes to achieve this goal:
-
+    
     Load the question set: 
         Load a list of questions that need to be evaluated.
     
@@ -11,8 +11,12 @@ We use following processes to achieve this goal:
 
     Create the Ground Truth Matrix:
         Initialize an empty matrix with dimensions (number of questions) x (number of documents).
-        For each question, find the best-matching documents based on some similarity or relevance score. This could involve using techniques like cosine similarity, mmr, or other text matching methods.
-        Populate the matrix based on the best-matching documents. You can mark the corresponding cells as "match" (e.g., set it to 1) for the best-matching documents and "not a match" (e.g., set it to 0) for the rest.
+        For each question, find the best-matching documents based on some similarity or relevance 
+        score. This could involve using techniques like cosine similarity, mmr, or other text 
+        matching methods.
+        Populate the matrix based on the best-matching documents. You can mark the corresponding 
+        cells as "match" (e.g., set it to 1) for the best-matching documents 
+        and "not a match" (e.g., set it to 0) for the rest.
 
     Output results to files.
 
