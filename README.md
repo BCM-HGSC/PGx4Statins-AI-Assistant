@@ -63,8 +63,8 @@ export OPENAI_API_KEY='sk-xxxx'
 
 #### 5. Question and Answering
 * Once the data insertion is complete, two options to do question/answering.
-* For basic QA, use [basic-qa](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/basic-qa).
-* For broswer QA, use [chatbot-stream](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/chatbot-stream).
+  * For basic QA, use [basic-qa](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/basic-qa).
+  * For broswer QA, use [chatbot-stream](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/chatbot-stream).
 
 #### 6. Deactivate Virtual Environment:
 * After using the application, deactivate the virtual environment with the following command:
