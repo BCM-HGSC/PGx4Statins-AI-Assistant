@@ -49,23 +49,7 @@ git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
 3. pip install --upgrade pip
 4. pip install -r requirements.txt
 ```
-
-#### 3. Configure the Application
-* Before running the application, configure the config.yaml file to specify the local vector chroma database settings and the path to the data files.
-* We have provided the CPIC data we used for the POC in the "data" folder, including CSVs and publication PDFs. If required you can replace these files with your own.
-* Replace the following lines in the config.yaml file with the appropriate file paths:
-* You can customize the chunk size and overlap size in the config.yaml file for the PDF files. 
-```commandline
-data:
-  directory:
-    - /path/to/data/slco1b1/csvs
-    - /path/to/data/slco1b1/pdfs
-
-parse_pdf:
-  chunk_size: 1000  # number of characters per chunk
-  chunk_overlap: 50  # number of characters to overlap between chunks
-```
-#### 4. Provide OpenAI API Key:
+#### 3. Provide OpenAI API Key:
 * The application utilizes the OpenAI API for embedding and querying.
 * Replace the following line in the config.yaml file with your OpenAI account's secret key, available on the [website](https://platform.openai.com/account/api-keys). 
 
@@ -74,15 +58,15 @@ For security we recommend setting the OPENAI_API_KEY as an environment variable 
 export OPENAI_API_KEY='sk-xxxx'
 ```
 
-#### 5. Insert data into the vector database
-* See [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/blob/main/upsert/README.md) for details
+#### 4. Insert data into the vector database
+* See [upsert](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/blob/main/upsert/README.md) for details
 
-#### 6. Question and Answering
-* Once the data insertion is complete, two option to do question/answering.
-* For basic QA, use [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/basic-qa).
-* For broswer QA, use [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/chatbot-stream).
+#### 5. Question and Answering
+* Once the data insertion is complete, two options to do question/answering.
+* For basic QA, use [basic-qa](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/basic-qa).
+* For broswer QA, use [chatbot-stream](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/chatbot-stream).
 
-#### 7. Deactivate Virtual Environment:
+#### 6. Deactivate Virtual Environment:
 * After using the application, deactivate the virtual environment with the following command:
 ```commandline
 conda deactivate  
