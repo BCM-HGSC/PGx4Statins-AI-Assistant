@@ -3,7 +3,7 @@ Assuming that data has been successfully inserted into the vector database (chro
 
 The web application is built using Streamlit, and the streaming option is employed to display the results in real-time. This approach ensures that users can receive prompt and relevant responses based on their queries and the context derived from previous interactions and stored data.
 
-#### 1.Question and Answering
+#### 1.Run Streamlit 
 * Running the following commands to start the question and answering application. The application will load the data from the vector database and initiate the Q&A session.
 * For patients:
 ```
