@@ -68,44 +68,20 @@ parse_pdf:
 #### 4. Provide OpenAI API Key:
 * The application utilizes the OpenAI API for embedding and querying.
 * Replace the following line in the config.yaml file with your OpenAI account's secret key, available on the [website](https://platform.openai.com/account/api-keys). 
-```
+
 For security we recommend setting the OPENAI_API_KEY as an environment variable before running the application. See instructions here [website](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
 ```
 export OPENAI_API_KEY='sk-xxxx'
 ```
+
 #### 5. Insert data into the vector database
-* The AI assistant uses Chroma as the vector database. More information about Chroma can be found [here](https://docs.trychroma.com/).
-* Use the provided script to insert the data into the vector database. Chroma is configured to save and load data locally for simplicity.
-* Data will be persisted on exit and loaded on start (if it exists). Replace the following line in the config.yaml file with the appropriate directory for persisting the database:
-```commandline
-chromadb:
-  persist_directory: /path/to/chroma-db/persist  # directory to persist the database
-  chroma_db_impl: duckdb+parquet # database implementation
-  collection_name: slco1b1_collection  # name of the collection
-```
-* Run the following command to insert the data into the vector database (Only run it once for the same config.yaml file):
-```
-1. conda activate <virtual-environment-name>
-2. cd </path/to/project>/PGx-slco1b1-chatbot/upsert
-3. python upsert.py -y ../config.yaml
-```
-* A pre-created chromba-db is also available in the 'chroma-db' folder for your use.
+* See [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/blob/main/upsert/README.md) for details
 
 #### 6. Question and Answering
-* Once the data insertion is complete, run the following commands to start the question and answering application. The application will load the data from the vector database and initiate the Q&A session.
-* For patients:
-```
-1. conda activate <virtual-environment-name>
-2. cd </path/to/project>/PGx-slco1b1-chatbot
-3. python questions_answering.py -y config.yaml -r patient
-```
-* For providers:
-```
-1. conda activate <virtual-environment-name>
-2. cd </path/to/project>/PGx-slco1b1-chatbot
-3. python questions_answering.py -y config.yaml -r provider
-```
-* To exit a Q&A session, simply type 'exit'.
+* Once the data insertion is complete, two option to do question/answering.
+* For basic QA, use [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/basic-qa).
+* For broswer QA, use [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/chatbot-stream).
+
 #### 7. Deactivate Virtual Environment:
 * After using the application, deactivate the virtual environment with the following command:
 ```commandline
