@@ -1,28 +1,9 @@
 ### Ground Truth
 
-The main purpose of the section is to create a ground truth results based on the best matching documents for a set of questions. 
-We use following processes to achieve this goal:
-    
-    Load the question set: 
-        Load a list of questions that need to be evaluated.
-    
-    Access the "chromadb" vector database: 
-        Retrieve the (5, 10, or 20) best-matching (similarity or mmr) documents for each question.
-
-    Create the Ground Truth Matrix:
-        Initialize an empty matrix with dimensions (number of questions) x (number of documents).
-        For each question, find the best-matching documents based on some similarity or relevance 
-        score. This could involve using techniques like cosine similarity, mmr, or other text 
-        matching methods.
-        Populate the matrix based on the best-matching documents. You can mark the corresponding 
-        cells as "match" (e.g., set it to 1) for the best-matching documents 
-        and "not a match" (e.g., set it to 0) for the rest.
-
-    Output results to files.
+Assuming that the data, which can be found [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/groundtruth-stats/data), has been successfully incorporated into the vector database known as "chromadb" (for information on how to upsert data into the vector store, please refer to this [link](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/upsert)), this application is designed to utilize a list of questions and retrieve the most relevant contextual information from the vector database for each question. Subsequently, it will assess the retrieved information to determine if it matches the questions. You can designate the corresponding cells as "matches" (e.g., set them to 1) for the best-matching documents and as "non-matches" (e.g., set them to 0) for the rest.
 
 #### 1. Run the script  
-* We assume the test data have been upserted into vector store chromadb (if you want to know how to upsert data into vector store, please refer to [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/tree/main/upsert))
-, run the following commands to start ground truth application. 
+* We assume the test data have been upserted into vector store chromadb, run the following commands to get ground truth results, which include [final_summary.csv](final_summary.csv), [final_individual_summary.csv](final_individual_summary.csv) and more detailed information in different txt and csv files.
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot/groundtruth-stats/openai
