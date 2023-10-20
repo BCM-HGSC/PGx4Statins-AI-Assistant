@@ -10,13 +10,14 @@ import ast
 from chromadb.config import Settings
 from omegaconf import OmegaConf
 import re
+import argparse
 
-yamlfile = '/Users/liwenw/PycharmProjects/ai/PGx-slco1b1-chatbot/config-1000-50_stats.yaml'
-config = OmegaConf.load(yamlfile)
-question_file = config.validation_file
-print(question_file)
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
+def create_parser():
+    parser = argparse.ArgumentParser(description='demo how to use ai embeddings to chat.')
+    parser.add_argument("-y", "--yaml", dest="yamlfile",
+                        help="Yaml file for project", metavar="YAML")
+    return parser
 
 def evaluate_conditions(conditions,answer):
     '''
@@ -39,6 +40,21 @@ def evaluate_conditions(conditions,answer):
     return result
 
 def main():
+    parser = create_parser()
+    args = parser.parse_args()
+
+    if args.yamlfile is None:
+        parser.print_help()
+        exit()
+
+    yamlfile = args.yamlfile
+    config = OmegaConf.load(yamlfile)
+
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if openai_api_key is None:
+        openai_api_key = config.openai.api_key
+
+    question_file = config.validation_file
     test_questions = pd.read_csv(question_file)
     df_final_summary = test_questions.groupby('category').agg({'question': 'count'}).reset_index()
     df_final_individual_summary = test_questions
@@ -111,8 +127,6 @@ def main():
     df_final_individual_summary.to_csv("final_individual_summary.csv", index=False)
     df_final_summary.to_csv(final_summary)
     print(df_final_summary)
-
-
 
 
 if __name__ == "__main__":
