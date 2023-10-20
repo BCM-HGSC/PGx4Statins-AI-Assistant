@@ -49,10 +49,20 @@ git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
 3. pip install --upgrade pip
 4. pip install -r requirements.txt
 ```
-#### 3. Provide OpenAI API Key:
+#### 3. Configure OpenAI settings
 * The application utilizes the OpenAI API for embedding and querying.
-* Replace the following line in the config.yaml file with your OpenAI account's secret key, available on the [website](https://platform.openai.com/account/api-keys). 
-
+* Replace the following lines in the config.yaml file with your OpenAI account's secret key, available on the [website](https://platform.openai.com/account/api-keys). You might use different models for embedding and chat. 
+The default models are text-embedding-ada-002 and gpt-4. 
+You can change the models in the config.yaml file. 
+* Also you can change the search type and number of resources to pickup.
+```commandline
+openai:
+  api_key: xxxx
+  embedding_model_name: text-embedding-ada-002
+  chat_model_name: gpt-4
+  chat_search_type: mmr   # mmr or similarity
+  chat_search_k: 4        # number of best resources to pickup
+```
 For security we recommend setting the OPENAI_API_KEY as an environment variable before running the application. See instructions here [website](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
 ```
 export OPENAI_API_KEY='sk-xxxx'
