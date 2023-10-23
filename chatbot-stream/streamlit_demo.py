@@ -78,7 +78,6 @@ if prompt := st.chat_input(f"What do you want to know: ", key="input"):
             messages=messages,
             stream=True,
         ):
-            # print(f"response: {response}")
             full_response += response.choices[0].delta.get("content", "")
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
