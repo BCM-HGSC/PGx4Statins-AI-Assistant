@@ -30,7 +30,7 @@ parse_pdf:
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot/upsert
-3. python upsert.py -y ../config.yaml
+3. python upsert_chroma.py -y ../config.yaml
 ```
 * A pre-created chromba-db is also available in the 'chroma-db' folder for your use.
 
