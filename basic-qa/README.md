@@ -7,13 +7,13 @@ Assuming that data has been successfully inserted into the vector database (chro
 * For patients:
 ```
 1. conda activate <virtual-environment-name>
-2. cd </path/to/project>/PGx-slco1b1-chatbot/basic-query
+2. cd </path/to/project>/PGx-slco1b1-chatbot/basic-qa
 3. python questions_answering.py -y /path/to/config.yaml -r patient
 ```
 * For providers:
 ```
 1. conda activate <virtual-environment-name>
-2. cd </path/to/project>/PGx-slco1b1-chatbot/basic-query
+2. cd </path/to/project>/PGx-slco1b1-chatbot/basic-qa
 3. python questions_answering.py -y /path/to/config.yaml -r provider
 ```
 * To exit a Q&A session, simply type 'exit'.
