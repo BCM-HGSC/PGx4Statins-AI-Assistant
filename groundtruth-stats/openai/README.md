@@ -15,7 +15,7 @@ if not.
 ```
 1. conda activate <virtual-environment-name>
 2. cd </path/to/project>/PGx-slco1b1-chatbot/groundtruth-stats/openai
-3. python groundtruth.py -y path/to/config.yaml
+3. python ground_truth.py -y path/to/config.yaml
 ```
 Note: the config.yaml should be the same as the one used for upserting data into vector store.
 
