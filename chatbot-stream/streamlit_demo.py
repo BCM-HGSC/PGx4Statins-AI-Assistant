@@ -57,7 +57,7 @@ if prompt := st.chat_input(f"What do you want to know: ", key="input"):
     docs = chroma_retriever.max_marginal_relevance_search(standalone_question)
     context = ""
     for doc in docs:
-        context = context + doc.page_content + " "
+        context = context + f"; content: { doc.page_content}" + f". source: {doc.metadata['source']} "
 
     if role == "provider":
         system_template = system_provider_template
@@ -70,7 +70,6 @@ if prompt := st.chat_input(f"What do you want to know: ", key="input"):
     system_template_content = system_template.format(context=context)
 
     messages.append({"role": "system", "content": system_template_content})
-
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
@@ -79,6 +78,7 @@ if prompt := st.chat_input(f"What do you want to know: ", key="input"):
             messages=messages,
             stream=True,
         ):
+            # print(f"response: {response}")
             full_response += response.choices[0].delta.get("content", "")
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
