@@ -1,9 +1,6 @@
 # -*- coding:utf-8 -*-
 # Created by liwenw at 6/12/23
 
-import sys
-sys.path.insert(0, '/Users/liwenw/PycharmProjects/ai/PGx-slco1b1-chatbot/langchain/libs/langchain/')
-
 import os
 import openai
 from langchain.document_loaders import CSVLoader
