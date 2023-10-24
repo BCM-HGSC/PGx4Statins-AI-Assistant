@@ -44,7 +44,7 @@ git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
 * We recommend using miniconda to manage the virtual environment. If you don't have miniconda installed, you can download it here.
 * After installing miniconda, create a virtual environment and install the required packages with the following commands:
 ```
-1. conda create -n "<virtual-environment-name>" python=3.9.2 ipython
+1. conda create -n "<virtual-environment-name>" python=3.11.4 ipython
 2. conda activate <virtual-environment-name>
 3. pip install --upgrade pip
 4. pip install -r requirements.txt
