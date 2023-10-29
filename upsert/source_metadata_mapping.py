@@ -16,36 +16,25 @@ source_metadata_mapping = {
 
     "RNPGX_PMID28237404.pdf":
         {"link": "http://dx.doi.org/doi:10.1016/j.therap.2016.09.017",
-         "source": "Fabien LamoureuxThomas Duflotthe French Network of Pharmacogenetics (RNPGX), Pharmacogenetics in cardiovascular diseases (2017), http://dx.doi.org/10.1016/j.therap.2016.09.017"},
+         "source": "Fabien Lamoureux,Thomas Duflot. The French Network of Pharmacogenetics (RNPGX), Pharmacogenetics in cardiovascular diseases (2017), http://dx.doi.org/10.1016/j.therap.2016.09.017"},
 
     "Rosuvastatin_02_25_19_FDA.pdf":
         {"link": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/021366s038lbl.pdf",
          "source": "FDA guidelines for CRESTOR (rosuvastatin calcium) tablets, Reference ID: 4347984"},
 
     "SLCO1B1_Diplotype_Phenotype_Mapping.csv":
-        {"link": "",
+        {"link": "https://cpicpgx.org/guidelines/cpic-guideline-for-statins/",
          "source": "SLCO1B1 Diplotypes to Phenotypes Mapping"},
-    "atorvastatin_SLCO1B1_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Atorvastatin CPIC Clinical Guidelines for SLCO1B1"},
-    "fluvastatin_SLCO1B1_CYP2C9_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Fluvastatin CPIC Clinical Guidelines for SLCO1B1 and CYP2C9"},
-    "lovastatin_SLCO1B1_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Lovastatin CPIC Clinical Guidelines for SLCO1B1"},
-    "pitavastatin_SLCO1B1_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Pitavastatin CPIC Clinical Guidelines for SLCO1B1"},
-    "pravastatin_SLCO1B1_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Pravastatin CPIC Clinical Guidelines for SLCO1B1"},
-    "rosuvastatin_SLCO1B1_ABCG2_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Rosuvastatin CPIC Clinical Guidelines for SLCO1B1 and ABCG2"},
-    "simvastatin_SLCO1B1_Phenotype_Pre_and_Post_Test_Alerts.csv":
-        {"link": "",
-         "source": "Simvastatin CPIC Clinical Guidelines for SLCO1B1"},
+    "ABCG2_Diplotype_Phenotype_Mapping.csv":
+        {"link": "https://cpicpgx.org/guidelines/cpic-guideline-for-statins/",
+         "source": "ABCG2 Diplotypes to Phenotypes Mapping"},
+    "CYP2C9_Diplotype_Phenotype_Mapping.csv":
+        {"link": "https://cpicpgx.org/guidelines/cpic-guideline-for-statins/",
+         "source": "CYP2C9 Diplotypes to Phenotypes Mapping"},
+    "AllStatins_SLCO1B1_CYP2C9_ABCG2_Phenotypes_Diplotypes_Pre_and_Post_Test_Alerts.csv":
+        {"link": "https://cpicpgx.org/guidelines/cpic-guideline-for-statins/",
+         "source": "CPIC Clinical Guidelines for Statins and SLCO1B1, ABCG2 and CYP2C9"},
+
 
 }
 
