@@ -18,3 +18,7 @@ data: # this is the settings for the data directory, directory is configurable
 parse_pdf:
   chunk_size: 1000
   chunk_overlap: 50
+
+  # this is the settings for the validation file, file is configurable
+validation_file:
+  /path/to/data/llm_gt.csv
