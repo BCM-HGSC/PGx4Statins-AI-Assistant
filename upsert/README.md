@@ -1,12 +1,12 @@
 ### Upsert data
 
-The AI assistant uses Chroma as the vector database. More information about Chroma can be found [here](https://docs.trychroma.com/).
-Assuming that configuration has been set as [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/blob/main/README.md).
+The AI assistant uses ChromaDB as the vector database. More information about Chroma can be found [here](https://docs.trychroma.com/).
+Please refer to details of the project [here](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot/blob/main/README.md) before proceeding with these steps.
 
 #### Configure settings
 
 * Before running the application, configure the config.yaml file to specify the local vector chroma database settings and the path to the data files.
-* We have provided the CPIC data we used for the POC in the "data" folder, including CSVs and publication PDFs. If required you can replace these files with your own.
+* We have provided the CPIC data we used for this pilot in the "data" folder, including CSVs and publications. If required you can replace these files with your own.
 * Replace the following lines in the config.yaml file with the appropriate file paths:
 * You can customize the chunk size and overlap size in the config.yaml file for the PDF files.
 
