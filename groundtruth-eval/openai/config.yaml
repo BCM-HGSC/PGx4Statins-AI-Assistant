@@ -1,0 +1,25 @@
+openai:
+  api_key: xxxx
+  embedding_model_name: text-embedding-ada-002
+  completion_model_name: text-davinci-003
+  chat_model_name: gpt-4
+  chat_search_type: mmr   # mmr or similarity
+  chat_search_k: 10        # number of best resources to pickup
+
+chromadb: # this is the settings for the vector database, persist_directory and collection_name are configurable
+  persist_directory: /path/to/chroma-db/persist
+  chroma_db_impl: duckdb+parquet
+  collection_name: collection_name
+
+data: # this is the settings for the data directory, directory is configurable
+  directory:
+    - ../data/csvs
+    - ../data/pdfs
+
+parse_pdf:
+  chunk_size: 1000
+  chunk_overlap: 50
+
+# this is the settings for the validation file, file is configurable
+validation_file:
+  ../llm_gt.csv
