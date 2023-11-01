@@ -1,0 +1,20 @@
+How should atorvastatin treatment be managed for a patient with the SLCO1B1 *5/*5 genotype?
+For a patient with SLCO1B1 decreased function, what are the CPIC recommendations for simvastatin use?
+How should rosuvastatin treatment be adjusted for a patient with an ABCG2 poor function phenotype?
+According to CPIC guidelines, for a patient with  CYP2C9 *3/*3 diplotype, what are the recommendations for fluvastatin dosage?
+My patient has decreased function in SLCO1B1, should I adjust her Livalo dosage? Or should I prescribe another statin?
+My patient has ABCG2 Poor Function and SLCO1B1 Decreased function. Do I need to make any changes to his current prescription? He takes Crestor.
+My patient is on fluvastatin currently, his pgx results indicate CYP2C9 intermediate metabolizer and SLCO1B1 normal function, what are CPIC guidelines? Provide citations.
+Do I need to make any dosing changes for rosuvastatin for ABCG2 poor function and SLCO1B1 normal function?
+What are Lescol XL dosing guidelines for SLCO1B1 decreased function and CYP2C9 poor metabolizer?
+My patient takes atorvastatin, his recent pharmacogenetic testing results shows that he has SLCO1B1 possible decreased function. Can he continue taking atorvastatin? Do I need to adjust his dosage? If so, can you give me some recommendations? Please cite sources.
+What are the consequences if my patient has SLCO1B1 decreased function and is on simvastatin?
+What does SLCO1B1 *5/*5 mean?
+How common is SLCO1B1 *1/*5?
+What do pharmacogenetic results *1/*2 for the CYP2C9 gene mean?
+What does a PGx result of *14/*14 for the gene SLCO1B1 mean?
+My patient has ABCG2 decreased function, should I adjust her Lipitor dosage? Or should I prescribe another statin?
+For a patient with a CYP2C9 poor metabolizer, what are the recommendations for simvastatin dosage? Use CPIC guidelines.
+If a patient's PGx results indicate  that they are a SLCO1B1 poor metabolizer, should I increase their Zocor dosing? Use established guidelines and cite references.
+Is it advised by CPIC guidelines to consider alternative statins for patients with variants in the ABCG2 gene who are prescribed lovastatin?
+According to CPIC guidelines, is there an increased myopathy risk with normal dose atorvastatin in patients with  SLCO1B1 increased function, will decreased dose alleviate myopathy? Cite sources.

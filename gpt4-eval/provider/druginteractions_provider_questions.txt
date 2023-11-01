@@ -1,0 +1,8 @@
+My patient just got PGx test results back and is SLCO1B1 decreased function. She has been on simvastatin for long time without side effects. What is the recommendation?
+My patient has cardiovascular disease and currently takes Lipitor. Their PGx test result shows SLCO1B1 increased function. Do I need to make any dosage adjustment? Or should I consider alternative statins? I also need citations for any recommendations provided.
+My patient has SLCO1B1 possible decreased function, what medicine and dosage can I safely prescribe for his cholesterol? He is also taking Reyataz for HIV.
+How should the management of a patient on a statin, such as atorvastatin, be adjusted when they are also prescribed a medication known to inhibit CYP3A4, such as clarithromycin? Please include considerations for potential interactions and alternative options.
+What is the impact of SLCO1B1 decreased function for Mevacor dosing? What is an optimal dose? How do other medications, health factors and conditions impact this?
+Are there PGx recommendations for children prescribed statins?
+My patient has been taking Pravachol for more than a year now without any side effects. Their recent pharmacogenetic test shows that they have SLCO1B1 poor function, and recommends adjusting the dose to 40mg. My patient currently takes 20mg. What should I do?
+Can you discuss the importance of considering patient-specific characteristics along with PGx testing results for SLCO1B1, ABCG2, and CYP2C9 when making clinical decisions regarding statin therapy?
