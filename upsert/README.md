@@ -10,6 +10,9 @@ Please refer to details of the project [here](https://github.com/BCM-HGSC/PGx-sl
 * Replace the following lines in the config.yaml file with the appropriate file paths:
 * You can customize the chunk size and overlap size in the config.yaml file for the PDF files.
 
+####  Prepare source mapping
+[source_metadata_mapping.py](source_metadata_mapping.py) contains metadata for all data files you use. It should be updated according to data files.
+
 ```commandline
 chromadb:
   persist_directory: /path/to/chroma-db/persist  # directory to persist the database
@@ -32,7 +35,6 @@ parse_pdf:
 2. cd </path/to/project>/PGx-slco1b1-chatbot/upsert
 3. python upsert_chroma.py -y ../config.yaml
 ```
-* A pre-created chromba-db is also available in the 'chroma-db' folder for your use.
 
 #### Deactivate Virtual Environment:
 * After using the application, deactivate the virtual environment with the following command:
