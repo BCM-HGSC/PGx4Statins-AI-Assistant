@@ -40,8 +40,7 @@ cd </path/to/project>
 git clone https://github.com/BCM-HGSC/PGx-slco1b1-chatbot.git
 ```
 #### 2. Setup python environment
-* Some Python packages require Python version >=3.7 and <=3.10. To ensure compatibility, create a Python virtual environment with Python 3.9.
-* We recommend using miniconda to manage the virtual environment. If you don't have miniconda installed, you can download it here.
+* We recommend using miniconda to manage the virtual environment. If you don't have miniconda installed, you can download it [here](https://docs.conda.io/en/latest/miniconda.html).
 * After installing miniconda, create a virtual environment and install the required packages with the following commands:
 ```
 1. conda create -n "<virtual-environment-name>" python=3.11.4 ipython
