@@ -1,2 +1,11 @@
-This folder contains the contextual information retrieved from the embedding model 'ext-embedding-ada-002' 
-for each of the questions used in the evaluation the PGx AI assistant. 
+###  PGx Context retrieved from "text-embedding-ada-002"  for evaluation
+
+This folder contains the contextual information retrieved from the OpenAI embedding model 'text-embedding-ada-002' using RAG
+for each of the questions used in the evaluation of the PGx AI assistant by the expert panel. This contextual information was 
+then passed by the AI assistant to OpenAI GPT-4 along with the associated prompts.
+The sub folders provider and patient house the respective questions for each of the sections in the evaluation in separate files for 
+each section. The context retrieved for these questions is stored in the corresponding *_output.txt files.
+
+#### Goal:
+In this section, our objective was to assess the performance of the OpenAI "text-embedding-ada-002" model in the retrieval of related context for queries posed by users against a curated KB of data and publications for statins and the genes SLCO1B1, ABCG2, and CYP2C9 based on CPIC guidelines. This retrieved context was included in the prompt to the PGx AI Assistant, see [home](https://github.com/BCM-HGSC/PGx-slco1b1-chatbot) for more details.
+
