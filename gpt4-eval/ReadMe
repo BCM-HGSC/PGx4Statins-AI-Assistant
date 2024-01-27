@@ -7,6 +7,7 @@ The sub folders provider and patient house the respective questions for each of 
 in separate files for each section. The context retrieved for these questions is stored in the corresponding *_output.txt files.
 
 Reading Level Assessment
+
 The sub folder patient_reading_level_assessment in this folder contains a word document that includes the patient/layperson questions 
 posed to the PGx AI assistant and the corresponding responses, the resulting Flesch-Kincaid reading level assessment and the python code 
 used to generate the same.
