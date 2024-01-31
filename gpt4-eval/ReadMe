@@ -9,5 +9,5 @@ in separate files for each section. The context retrieved for these questions is
 Reading Level Assessment
 
 The sub folder patient_reading_level_assessment in this folder contains a word document that includes the patient/layperson questions 
-posed to the PGx AI assistant and the corresponding responses, the resulting Flesch-Kincaid reading level assessment and the python code 
+posed to the PGx AI assistant and ChatGPT 3.5 and the corresponding responses, the resulting Flesch-Kincaid reading level assessmentfor each and the python code 
 used to generate the same.
