@@ -1,7 +1,35 @@
-The Flesch-Kincaid reading level of the document is 6.874833007554546.
 
-Flesch-Kincaid Grade Level Interpretation:
-- Score around 1: Text is easily understandable by an average 1st grader.
-- Score around 6-7: Text is easily understandable by 6th to 7th graders.
-- Score around 12: Text is easily understandable by high school graduates.
-- Score above 12: Text is easily understandable by college-level students.
+Document: Readability_Pharmacogenetics (PGx) AI Assistant - Responses for Patient.docx
+The Flesch-Kincaid reading level of the document is 8.482106364378375.
+
+    Flesch-Kincaid Grade Level Interpretation:
+    - Score around 1: Text is easily understandable by an average 1st grader.
+    - Score around 6-7: Text is easily understandable by 6th to 7th graders.
+    - Score around 12: Text is easily understandable by high school graduates.
+    - Score above 12: Text is easily understandable by college-level students.
+    
+The SMOG index of the document is 10.7571582124826.
+
+    SMOG Index Interpretation:
+    - Score around 1-5: Text is easily understandable by elementary school students.
+    - Score around 6-8: Text is easily understandable by middle school students.
+    - Score around 9-12: Text is easily understandable by high school students.
+    - Score above 12: Text is easily understandable by college-level students.
+    
+Document: Readability_ChatGPT 3.5 PGx Responses - Responses for Patient.docx
+The Flesch-Kincaid reading level of the document is 13.549997253037507.
+
+    Flesch-Kincaid Grade Level Interpretation:
+    - Score around 1: Text is easily understandable by an average 1st grader.
+    - Score around 6-7: Text is easily understandable by 6th to 7th graders.
+    - Score around 12: Text is easily understandable by high school graduates.
+    - Score above 12: Text is easily understandable by college-level students.
+    
+The SMOG index of the document is 14.81442440627987.
+
+    SMOG Index Interpretation:
+    - Score around 1-5: Text is easily understandable by elementary school students.
+    - Score around 6-8: Text is easily understandable by middle school students.
+    - Score around 9-12: Text is easily understandable by high school students.
+    - Score above 12: Text is easily understandable by college-level students.
+    
