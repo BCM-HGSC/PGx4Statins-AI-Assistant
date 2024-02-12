@@ -81,3 +81,12 @@ export OPENAI_API_KEY='sk-xxxx'
 conda deactivate  
 ```
 Please ensure you use the same config.yaml file for both data insertion and question/answering. Please note that the first time you run the application, there might be a lag for data to be loaded into the vector database. Enjoy using the PGx-slco1b1-chatbot! If you encounter any issues or have questions, feel free to reach out for support.
+
+#### Disclaimer and Disclosure
+This repository contains code and data used for a research study examining the performance of a pharmacogenomics (PGx) AI assistant in comparison with OpenAI's ChatGPT 3.5. The contents, including the AI assistant, are part of an academic investigation and should be considered experimental. They are not intended for clinical use or as a substitute for professional healthcare advice.
+
+The findings and tools within this repository are shared for the purpose of fostering scientific discussion, further research, and development in the field of pharmacogenomics and AI. They reflect the state of the project at the time of the study and are provided "as is" without any warranty of accuracy or reliability for clinical decision-making.
+
+Researchers and practitioners should exercise caution and professional judgment before applying any insights, data, or code from this study in practice. The authors, contributors, and affiliated institutions bear no responsibility for the use or misuse of the information and software provided.
+
+Use of the materials contained herein is subject to understanding and acceptance of these limitations and the experimental nature of this research.
